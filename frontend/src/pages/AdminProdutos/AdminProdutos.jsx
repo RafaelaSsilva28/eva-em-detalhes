@@ -138,17 +138,23 @@ function AdminProdutos() {
     }
   }
 
-  function montarUrlImagem(caminho) {
-    if (!caminho) {
-      return null;
-    }
-
-    if (caminho.startsWith("http")) {
-      return caminho;
-    }
-
-    return `${API_URL}${caminho}`;
+function montarUrlImagem(caminho) {
+  if (!caminho) {
+    return null;
   }
+
+  if (caminho.startsWith("http")) {
+    return caminho;
+  }
+
+  const apiUrlSemBarraFinal = API_URL.replace(/\/$/, "");
+
+  const caminhoComBarraInicial = caminho.startsWith("/")
+    ? caminho
+    : `/${caminho}`;
+
+  return `${apiUrlSemBarraFinal}${caminhoComBarraInicial}`;
+}
 
   function obterImagem(produto) {
     return montarUrlImagem(produto?.imagem_principal);

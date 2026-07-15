@@ -191,7 +191,13 @@ function AdminImagens() {
       return caminho;
     }
 
-    return `${API_URL}${caminho}`;
+    const apiUrlSemBarraFinal = API_URL.replace(/\/$/, "");
+
+    const caminhoComBarraInicial = caminho.startsWith("/")
+      ? caminho
+      : `/${caminho}`;
+
+    return `${apiUrlSemBarraFinal}${caminhoComBarraInicial}`;
   }
 
   function formatarPreco(valor) {

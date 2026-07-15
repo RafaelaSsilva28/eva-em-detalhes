@@ -12,8 +12,7 @@ import { API_URL } from "../../services/api.js";
 import "./CardProduto.css";
 
 function CardProduto({ produto, onAbrir }) {
-  const [favoritado, setFavoritado] =
-    useState(false);
+  const [favoritado, setFavoritado] = useState(false);
 
   const numeroWhatsApp = "5518999999999";
 
@@ -21,15 +20,11 @@ function CardProduto({ produto, onAbrir }) {
     function verificarFavorito() {
       const favoritosSalvos =
         JSON.parse(
-          localStorage.getItem(
-            "produtosFavoritos"
-          )
+          localStorage.getItem("produtosFavoritos")
         ) || [];
 
       const estaFavoritado =
-        favoritosSalvos.includes(
-          produto.id_produto
-        );
+        favoritosSalvos.includes(produto.id_produto);
 
       setFavoritado(estaFavoritado);
     }
@@ -69,28 +64,31 @@ function CardProduto({ produto, onAbrir }) {
     );
   }
 
-  function obterImagem() {
-    if (!produto.imagem_principal) {
+  function montarUrlImagem(caminho) {
+    if (!caminho) {
       return null;
     }
 
-    if (
-      produto.imagem_principal.startsWith(
-        "http"
-      )
-    ) {
-      return produto.imagem_principal;
+    if (caminho.startsWith("http")) {
+      return caminho;
     }
 
-    return `${API_URL}${produto.imagem_principal}`;
+    const apiUrlSemBarraFinal = API_URL.replace(/\/$/, "");
+    const caminhoComBarraInicial = caminho.startsWith("/")
+      ? caminho
+      : `/${caminho}`;
+
+    return `${apiUrlSemBarraFinal}${caminhoComBarraInicial}`;
+  }
+
+  function obterImagem() {
+    return montarUrlImagem(produto.imagem_principal);
   }
 
   function alternarFavorito() {
     const favoritosSalvos =
       JSON.parse(
-        localStorage.getItem(
-          "produtosFavoritos"
-        )
+        localStorage.getItem("produtosFavoritos")
       ) || [];
 
     let novosFavoritos;
@@ -99,8 +97,7 @@ function CardProduto({ produto, onAbrir }) {
       novosFavoritos =
         favoritosSalvos.filter(
           (idProduto) =>
-            idProduto !==
-            produto.id_produto
+            idProduto !== produto.id_produto
         );
 
       toast.success(
@@ -129,9 +126,7 @@ function CardProduto({ produto, onAbrir }) {
     );
 
     window.dispatchEvent(
-      new Event(
-        "favoritosAtualizados"
-      )
+      new Event("favoritosAtualizados")
     );
   }
 
@@ -223,6 +218,7 @@ function CardProduto({ produto, onAbrir }) {
           <span />
 
           {produto.categoria ||
+            produto.nome_categoria ||
             "Artesanato em EVA"}
         </div>
 
@@ -241,9 +237,7 @@ function CardProduto({ produto, onAbrir }) {
             <strong>
               {produto.preco_sob_consulta
                 ? "Sob consulta"
-                : formatarPreco(
-                    produto.preco
-                  )}
+                : formatarPreco(produto.preco)}
             </strong>
           </div>
 

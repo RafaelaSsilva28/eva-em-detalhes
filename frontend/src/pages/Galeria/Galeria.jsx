@@ -31,26 +31,19 @@ import api, {
 import "./Galeria.css";
 
 function Galeria() {
-  const [produtos, setProdutos] =
-    useState([]);
+  const [produtos, setProdutos] = useState([]);
 
-  const [categorias, setCategorias] =
-    useState([]);
+  const [categorias, setCategorias] = useState([]);
 
-  const [categoriaSelecionada, setCategoriaSelecionada] =
-    useState("todos");
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState("todos");
 
-  const [indiceInicial, setIndiceInicial] =
-    useState(0);
+  const [indiceInicial, setIndiceInicial] = useState(0);
 
-  const [ultimaInteracaoManual, setUltimaInteracaoManual] =
-    useState(0);
+  const [ultimaInteracaoManual, setUltimaInteracaoManual] = useState(0);
 
-  const [carregando, setCarregando] =
-    useState(true);
+  const [carregando, setCarregando] = useState(true);
 
-  const [produtoSelecionado, setProdutoSelecionado] =
-    useState(null);
+  const [produtoSelecionado, setProdutoSelecionado] = useState(null);
 
   const numeroWhatsApp = "5518999999999";
 
@@ -71,41 +64,30 @@ function Galeria() {
           api.get("/categorias")
         ]);
 
-        const listaProdutos = Array.isArray(
-          respostaProdutos.data
-        )
+        const listaProdutos = Array.isArray(respostaProdutos.data)
           ? respostaProdutos.data
           : respostaProdutos.data.produtos || [];
 
-        const listaCategorias = Array.isArray(
-          respostaCategorias.data
-        )
+        const listaCategorias = Array.isArray(respostaCategorias.data)
           ? respostaCategorias.data
           : respostaCategorias.data.categorias || [];
 
-        const produtosDaGaleria =
-          listaProdutos.filter(
-            (produto) =>
-              produto.ativo &&
-              produto.exibir_produtos
-          );
+        const produtosDaGaleria = listaProdutos.filter(
+          (produto) =>
+            produto.ativo &&
+            produto.exibir_galeria
+        );
 
-        const categoriasAtivas =
-          listaCategorias.filter(
-            (categoria) => categoria.ativo
-          );
+        const categoriasAtivas = listaCategorias.filter(
+          (categoria) => categoria.ativo
+        );
 
         setProdutos(produtosDaGaleria);
         setCategorias(categoriasAtivas);
       } catch (erro) {
-        console.error(
-          "Erro ao carregar galeria:",
-          erro
-        );
+        console.error("Erro ao carregar galeria:", erro);
 
-        toast.error(
-          "Não foi possível carregar a galeria."
-        );
+        toast.error("Não foi possível carregar a galeria.");
       } finally {
         setCarregando(false);
       }
@@ -126,10 +108,8 @@ function Galeria() {
 
     return produtos.filter(
       (produto) =>
-        String(produto.categoria_id) ===
-          String(categoriaSelecionada) ||
-        String(produto.id_categoria) ===
-          String(categoriaSelecionada)
+        String(produto.categoria_id) === String(categoriaSelecionada) ||
+        String(produto.id_categoria) === String(categoriaSelecionada)
     );
   }, [
     categoriaSelecionada,
@@ -137,19 +117,15 @@ function Galeria() {
   ]);
 
   const produtoDestaque = useMemo(() => {
-    const produtoComDestaque =
-      produtosFiltrados.find(
-        (produto) =>
-          produto.destaque &&
-          produto.imagem_principal
-      );
+    const produtoComDestaque = produtosFiltrados.find(
+      (produto) =>
+        produto.destaque &&
+        produto.imagem_principal
+    );
 
     return (
       produtoComDestaque ||
-      produtosFiltrados.find(
-        (produto) =>
-          produto.imagem_principal
-      ) ||
+      produtosFiltrados.find((produto) => produto.imagem_principal) ||
       produtosFiltrados[0] ||
       null
     );
@@ -162,8 +138,7 @@ function Galeria() {
 
     return produtosFiltrados.filter(
       (produto) =>
-        produto.id_produto !==
-        produtoDestaque.id_produto
+        produto.id_produto !== produtoDestaque.id_produto
     );
   }, [
     produtoDestaque,
@@ -171,10 +146,7 @@ function Galeria() {
   ]);
 
   const produtosMuralVisiveis = useMemo(() => {
-    if (
-      produtosMural.length <=
-      quantidadePorGrupo
-    ) {
+    if (produtosMural.length <= quantidadePorGrupo) {
       return produtosMural;
     }
 
@@ -195,9 +167,7 @@ function Galeria() {
   );
 
   useEffect(() => {
-    if (
-      produtosMural.length <= quantidadePorGrupo
-    ) {
+    if (produtosMural.length <= quantidadePorGrupo) {
       return undefined;
     }
 
@@ -211,8 +181,7 @@ function Galeria() {
     function iniciarIntervalo() {
       intervaloId = setInterval(() => {
         setIndiceInicial((indiceAtual) => {
-          const proximoIndice =
-            indiceAtual + quantidadePorGrupo;
+          const proximoIndice = indiceAtual + quantidadePorGrupo;
 
           if (proximoIndice >= produtosMural.length) {
             return 0;
@@ -265,15 +234,19 @@ function Galeria() {
       return null;
     }
 
-    if (
-      produto.imagem_principal.startsWith(
-        "http"
-      )
-    ) {
-      return produto.imagem_principal;
+    const caminho = produto.imagem_principal;
+
+    if (caminho.startsWith("http")) {
+      return caminho;
     }
 
-    return `${API_URL}${produto.imagem_principal}`;
+    const apiUrlSemBarraFinal = API_URL.replace(/\/$/, "");
+
+    const caminhoComBarraInicial = caminho.startsWith("/")
+      ? caminho
+      : `/${caminho}`;
+
+    return `${apiUrlSemBarraFinal}${caminhoComBarraInicial}`;
   }
 
   function abrirWhatsApp() {
@@ -307,8 +280,7 @@ function Galeria() {
     }
 
     setIndiceInicial((indiceAtual) => {
-      const proximoIndice =
-        indiceAtual + quantidadePorGrupo;
+      const proximoIndice = indiceAtual + quantidadePorGrupo;
 
       if (proximoIndice >= produtosMural.length) {
         return 0;
@@ -325,8 +297,7 @@ function Galeria() {
       if (indiceAtual === 0) {
         return Math.max(
           0,
-          (quantidadeGrupos - 1) *
-            quantidadePorGrupo
+          (quantidadeGrupos - 1) * quantidadePorGrupo
         );
       }
 
@@ -340,9 +311,7 @@ function Galeria() {
   function selecionarGrupo(indiceGrupo) {
     setUltimaInteracaoManual(Date.now());
 
-    setIndiceInicial(
-      indiceGrupo * quantidadePorGrupo
-    );
+    setIndiceInicial(indiceGrupo * quantidadePorGrupo);
   }
 
   const momentos = [
@@ -515,9 +484,7 @@ function Galeria() {
                   ? "galeriaFiltro galeriaFiltroAtivo"
                   : "galeriaFiltro"
               }
-              onClick={() =>
-                setCategoriaSelecionada("todos")
-              }
+              onClick={() => setCategoriaSelecionada("todos")}
             >
               <FiLayers />
               Todos
@@ -534,9 +501,7 @@ function Galeria() {
                     : "galeriaFiltro"
                 }
                 onClick={() =>
-                  setCategoriaSelecionada(
-                    categoria.id_categoria
-                  )
+                  setCategoriaSelecionada(categoria.id_categoria)
                 }
               >
                 <FiTag />
@@ -547,18 +512,14 @@ function Galeria() {
 
           {carregando ? (
             <div className="galeriaCarregando">
-              {[1, 2, 3, 4, 5, 6].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className={`galeriaSkeleton ${classeDoItem(
-                      item
-                    )}`}
-                  >
-                    <span />
-                  </div>
-                )
-              )}
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div
+                  key={item}
+                  className={`galeriaSkeleton ${classeDoItem(item)}`}
+                >
+                  <span />
+                </div>
+              ))}
             </div>
           ) : produtosFiltrados.length > 0 ? (
             <div className="galeriaExperiencia">
@@ -567,9 +528,7 @@ function Galeria() {
                   <div className="galeriaObraImagem">
                     {obterImagem(produtoDestaque) ? (
                       <img
-                        src={obterImagem(
-                          produtoDestaque
-                        )}
+                        src={obterImagem(produtoDestaque)}
                         alt={produtoDestaque.nome}
                       />
                     ) : (
@@ -581,11 +540,7 @@ function Galeria() {
 
                     <button
                       type="button"
-                      onClick={() =>
-                        abrirProduto(
-                          produtoDestaque
-                        )
-                      }
+                      onClick={() => abrirProduto(produtoDestaque)}
                     >
                       <FiEye />
                       Ver detalhes
@@ -609,6 +564,7 @@ function Galeria() {
                     <div className="galeriaObraMeta">
                       <small>
                         {produtoDestaque.categoria ||
+                          produtoDestaque.nome_categoria ||
                           "Artesanato em EVA"}
                       </small>
 
@@ -636,63 +592,56 @@ function Galeria() {
                     key={`${categoriaSelecionada}-${indiceInicial}`}
                     className="galeriaMuralGrid galeriaMuralAnimado"
                   >
-                    {produtosMuralVisiveis.map(
-                      (produto, index) => {
-                        const imagem =
-                          obterImagem(produto);
+                    {produtosMuralVisiveis.map((produto, index) => {
+                      const imagem = obterImagem(produto);
 
-                        return (
-                          <article
-                            key={`${produto.id_produto}-${index}`}
-                            className={`galeriaMuralItem ${classeDoItem(
-                              index
-                            )}`}
+                      return (
+                        <article
+                          key={`${produto.id_produto}-${index}`}
+                          className={`galeriaMuralItem ${classeDoItem(index)}`}
+                        >
+                          <button
+                            type="button"
+                            className="galeriaMuralBotao"
+                            onClick={() => abrirProduto(produto)}
+                            aria-label={`Ver detalhes de ${produto.nome}`}
                           >
-                            <button
-                              type="button"
-                              className="galeriaMuralBotao"
-                              onClick={() =>
-                                abrirProduto(produto)
-                              }
-                              aria-label={`Ver detalhes de ${produto.nome}`}
-                            >
-                              {imagem ? (
-                                <img
-                                  src={imagem}
-                                  alt={produto.nome}
-                                  loading="lazy"
-                                />
-                              ) : (
-                                <div className="galeriaImagemVazia">
-                                  <FiImage />
-                                  <span>EVA</span>
-                                </div>
-                              )}
-
-                              <div className="galeriaMuralOverlay">
-                                <span>
-                                  {produto.categoria ||
-                                    "Criação em EVA"}
-                                </span>
-
-                                <h3>{produto.nome}</h3>
-
-                                <small>
-                                  Abrir inspiração
-                                  <FiArrowRight />
-                                </small>
+                            {imagem ? (
+                              <img
+                                src={imagem}
+                                alt={produto.nome}
+                                loading="lazy"
+                              />
+                            ) : (
+                              <div className="galeriaImagemVazia">
+                                <FiImage />
+                                <span>EVA</span>
                               </div>
-                            </button>
+                            )}
 
-                            <span className="galeriaMuralAlfinete" />
-                          </article>
-                        );
-                      }
-                    )}
+                            <div className="galeriaMuralOverlay">
+                              <span>
+                                {produto.categoria ||
+                                  produto.nome_categoria ||
+                                  "Criação em EVA"}
+                              </span>
+
+                              <h3>{produto.nome}</h3>
+
+                              <small>
+                                Abrir inspiração
+                                <FiArrowRight />
+                              </small>
+                            </div>
+                          </button>
+
+                          <span className="galeriaMuralAlfinete" />
+                        </article>
+                      );
+                    })}
                   </div>
 
-                  {produtosMural.length >
-                    quantidadePorGrupo && (
+                  {produtosMural.length > quantidadePorGrupo && (
                     <div className="galeriaControlesCarrossel">
                       <button
                         type="button"
@@ -709,8 +658,7 @@ function Galeria() {
                         }).map((_, index) => {
                           const indicadorAtivo =
                             Math.floor(
-                              indiceInicial /
-                                quantidadePorGrupo
+                              indiceInicial / quantidadePorGrupo
                             ) === index;
 
                           return (
@@ -722,9 +670,7 @@ function Galeria() {
                                   ? "galeriaIndicador galeriaIndicadorAtivo"
                                   : "galeriaIndicador"
                               }
-                              onClick={() =>
-                                selecionarGrupo(index)
-                              }
+                              onClick={() => selecionarGrupo(index)}
                               aria-label={`Mostrar grupo ${index + 1} da galeria`}
                             />
                           );
@@ -734,9 +680,7 @@ function Galeria() {
                       <button
                         type="button"
                         className="galeriaSeta"
-                        onClick={() =>
-                          proximoGrupo(true)
-                        }
+                        onClick={() => proximoGrupo(true)}
                         aria-label="Próximo grupo"
                       >
                         <FiChevronRight />
@@ -803,9 +747,7 @@ function Galeria() {
               <button
                 type="button"
                 className="btnPrimario"
-                onClick={() =>
-                  setCategoriaSelecionada("todos")
-                }
+                onClick={() => setCategoriaSelecionada("todos")}
               >
                 Ver todas as inspirações
                 <FiArrowRight />

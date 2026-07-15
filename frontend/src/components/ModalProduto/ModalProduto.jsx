@@ -28,25 +28,20 @@ function ModalProduto({
   aberto,
   onFechar
 }) {
-  const [produto, setProduto] =
-    useState(null);
+  const [produto, setProduto] = useState(null);
 
-  const [imagens, setImagens] =
-    useState([]);
+  const [imagens, setImagens] = useState([]);
 
   const [
     imagemSelecionada,
     setImagemSelecionada
   ] = useState(0);
 
-  const [carregando, setCarregando] =
-    useState(false);
+  const [carregando, setCarregando] = useState(false);
 
-  const [favoritado, setFavoritado] =
-    useState(false);
+  const [favoritado, setFavoritado] = useState(false);
 
-  const numeroWhatsApp =
-    "5518999999999";
+  const numeroWhatsApp = "5518999999999";
 
   useEffect(() => {
     if (!aberto || !produtoId) {
@@ -66,13 +61,8 @@ function ModalProduto({
           respostaProduto,
           respostaImagens
         ] = await Promise.all([
-          api.get(
-            `/produtos/${produtoId}`
-          ),
-
-          api.get(
-            `/produtos/${produtoId}/imagens`
-          )
+          api.get(`/produtos/${produtoId}`),
+          api.get(`/produtos/${produtoId}/imagens`)
         ]);
 
         if (!componenteAtivo) {
@@ -84,12 +74,9 @@ function ModalProduto({
           respostaProduto.data;
 
         const listaImagens =
-          Array.isArray(
-            respostaImagens.data
-          )
+          Array.isArray(respostaImagens.data)
             ? respostaImagens.data
-            : respostaImagens.data.imagens ||
-              [];
+            : respostaImagens.data.imagens || [];
 
         setProduto(dadosProduto);
 
@@ -120,15 +107,11 @@ function ModalProduto({
 
         const favoritos =
           JSON.parse(
-            localStorage.getItem(
-              "produtosFavoritos"
-            )
+            localStorage.getItem("produtosFavoritos")
           ) || [];
 
         setFavoritado(
-          favoritos.includes(
-            dadosProduto.id_produto
-          )
+          favoritos.includes(dadosProduto.id_produto)
         );
       } catch (erro) {
         console.error(
@@ -157,7 +140,8 @@ function ModalProduto({
     };
   }, [
     aberto,
-    produtoId
+    produtoId,
+    onFechar
   ]);
 
   useEffect(() => {
@@ -165,8 +149,7 @@ function ModalProduto({
       return undefined;
     }
 
-    const posicaoRolagem =
-      window.scrollY;
+    const posicaoRolagem = window.scrollY;
 
     function fecharComEscape(evento) {
       if (evento.key === "Escape") {
@@ -174,21 +157,10 @@ function ModalProduto({
       }
     }
 
-    /*
-      Mantém a página do fundo parada,
-      sem deslocá-la para cima.
-    */
-    document.body.style.position =
-      "fixed";
-
-    document.body.style.top =
-      `-${posicaoRolagem}px`;
-
-    document.body.style.width =
-      "100%";
-
-    document.body.style.overflow =
-      "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${posicaoRolagem}px`;
+    document.body.style.width = "100%";
+    document.body.style.overflow = "hidden";
 
     window.addEventListener(
       "keydown",
@@ -196,22 +168,12 @@ function ModalProduto({
     );
 
     return () => {
-      document.body.style.position =
-        "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
 
-      document.body.style.top =
-        "";
-
-      document.body.style.width =
-        "";
-
-      document.body.style.overflow =
-        "";
-
-      window.scrollTo(
-        0,
-        posicaoRolagem
-      );
+      window.scrollTo(0, posicaoRolagem);
 
       window.removeEventListener(
         "keydown",
@@ -242,7 +204,12 @@ function ModalProduto({
       return caminho;
     }
 
-    return `${API_URL}${caminho}`;
+    const apiUrlSemBarraFinal = API_URL.replace(/\/$/, "");
+    const caminhoComBarraInicial = caminho.startsWith("/")
+      ? caminho
+      : `/${caminho}`;
+
+    return `${apiUrlSemBarraFinal}${caminhoComBarraInicial}`;
   }
 
   function alternarFavorito() {
@@ -252,9 +219,7 @@ function ModalProduto({
 
     const favoritos =
       JSON.parse(
-        localStorage.getItem(
-          "produtosFavoritos"
-        )
+        localStorage.getItem("produtosFavoritos")
       ) || [];
 
     let novosFavoritos;
@@ -263,8 +228,7 @@ function ModalProduto({
       novosFavoritos =
         favoritos.filter(
           (idProduto) =>
-            idProduto !==
-            produto.id_produto
+            idProduto !== produto.id_produto
         );
 
       toast.success(
@@ -293,9 +257,7 @@ function ModalProduto({
     );
 
     window.dispatchEvent(
-      new Event(
-        "favoritosAtualizados"
-      )
+      new Event("favoritosAtualizados")
     );
   }
 
@@ -338,10 +300,7 @@ function ModalProduto({
 
     setImagemSelecionada(
       (indiceAtual) => {
-        if (
-          indiceAtual ===
-          imagens.length - 1
-        ) {
+        if (indiceAtual === imagens.length - 1) {
           return 0;
         }
 
@@ -357,12 +316,9 @@ function ModalProduto({
   const imagemPrincipal =
     imagens.length > 0
       ? obterUrlImagem(
-          imagens[imagemSelecionada]
-            ?.caminho_imagem
+          imagens[imagemSelecionada]?.caminho_imagem
         )
-      : obterUrlImagem(
-          produto?.imagem_principal
-        );
+      : obterUrlImagem(produto?.imagem_principal);
 
   return (
     <div
@@ -451,15 +407,12 @@ function ModalProduto({
                           key={imagem.id_imagem}
                           type="button"
                           className={
-                            imagemSelecionada ===
-                            index
+                            imagemSelecionada === index
                               ? "modalProdutoMiniatura modalProdutoMiniaturaAtiva"
                               : "modalProdutoMiniatura"
                           }
                           onClick={() =>
-                            setImagemSelecionada(
-                              index
-                            )
+                            setImagemSelecionada(index)
                           }
                           aria-label={`Visualizar imagem ${index + 1}`}
                         >
@@ -486,14 +439,12 @@ function ModalProduto({
                     </span>
 
                     <strong>
-                      Cada detalhe é feito
-                      especialmente para você
+                      Cada detalhe é feito especialmente para você
                     </strong>
 
                     <p>
-                      Cores, tamanho e tema podem ser
-                      personalizados conforme o seu
-                      pedido.
+                      Cores, tamanho e tema podem ser personalizados conforme o
+                      seu pedido.
                     </p>
                   </div>
 
@@ -514,6 +465,7 @@ function ModalProduto({
                     <FiTag />
 
                     {produto.categoria ||
+                      produto.nome_categoria ||
                       "Artesanato em EVA"}
                   </span>
 
@@ -524,9 +476,7 @@ function ModalProduto({
                         ? "modalProdutoFavorito modalProdutoFavoritoAtivo"
                         : "modalProdutoFavorito"
                     }
-                    onClick={
-                      alternarFavorito
-                    }
+                    onClick={alternarFavorito}
                   >
                     <FiHeart />
 
@@ -550,9 +500,7 @@ function ModalProduto({
                   <strong>
                     {produto.preco_sob_consulta
                       ? "Sob consulta"
-                      : formatarPreco(
-                          produto.preco
-                        )}
+                      : formatarPreco(produto.preco)}
                   </strong>
                 </div>
 
@@ -646,8 +594,7 @@ function ModalProduto({
                 </button>
 
                 <p className="modalProdutoObservacao">
-                  O valor e o prazo podem variar
-                  conforme tamanho, tema e
+                  O valor e o prazo podem variar conforme tamanho, tema e
                   personalização escolhida.
                 </p>
               </div>
