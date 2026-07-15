@@ -15,9 +15,14 @@ const pool = new Pool({
       : false
 });
 
-pool.on("connect", () => {
-  console.log("Banco de dados conectado.");
-});
+export async function testarConexao() {
+  try {
+    await pool.query("SELECT NOW()");
+    console.log("Banco de dados conectado com sucesso.");
+  } catch (erro) {
+    console.error("Erro ao conectar com o banco de dados:", erro);
+  }
+}
 
 pool.on("error", (erro) => {
   console.error("Erro inesperado no banco de dados:", erro);
