@@ -77,66 +77,106 @@ function AdminProdutos() {
     };
   }, [novasImagens]);
 
-  async function carregarDados() {
+ async function carregarDados() {
+  try {
+    setCarregando(true);
+
+    const token = localStorage.getItem("tokenEvaEmDetalhes");
+
+    let produtosAtivos = [];
+    let produtosInativos = [];
+    let categoriasAtivas = [];
+    let categoriasInativas = [];
+
     try {
-      setCarregando(true);
+      const respostaProdutosAtivos = await api.get("/produtos", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
 
-      const token = localStorage.getItem("tokenEvaEmDetalhes");
-
-      const [
-        respostaProdutosAtivos,
-        respostaProdutosInativos,
-        respostaCategorias
-      ] = await Promise.all([
-        api.get("/produtos", {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }),
-        api.get("/produtos/inativos", {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }),
-        api.get("/categorias", {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-      ]);
-
-      const listaProdutosAtivos = Array.isArray(respostaProdutosAtivos.data)
+      produtosAtivos = Array.isArray(respostaProdutosAtivos.data)
         ? respostaProdutosAtivos.data
         : respostaProdutosAtivos.data.produtos || [];
+    } catch (erro) {
+      console.error("Erro ao buscar produtos ativos:", erro);
+    }
 
-      const listaProdutosInativos = Array.isArray(respostaProdutosInativos.data)
+    try {
+      const respostaProdutosInativos = await api.get("/produtos/inativos", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      produtosInativos = Array.isArray(respostaProdutosInativos.data)
         ? respostaProdutosInativos.data
         : respostaProdutosInativos.data.produtos || [];
+    } catch (erro) {
+      console.warn("Erro ao buscar produtos inativos:", erro);
+    }
 
-      const listaProdutos = [
-        ...listaProdutosAtivos,
-        ...listaProdutosInativos
-      ];
+    try {
+      const respostaCategorias = await api.get("/categorias", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
 
-      const produtosSemDuplicar = listaProdutos.filter(
-        (produto, index, array) =>
-          index ===
-          array.findIndex((item) => item.id_produto === produto.id_produto)
-      );
-
-      const listaCategorias = Array.isArray(respostaCategorias.data)
+      categoriasAtivas = Array.isArray(respostaCategorias.data)
         ? respostaCategorias.data
         : respostaCategorias.data.categorias || [];
-
-      setProdutos(produtosSemDuplicar);
-      setCategorias(listaCategorias);
     } catch (erro) {
-      console.error("Erro ao carregar produtos:", erro);
-      toast.error("Não foi possível carregar os produtos.");
-    } finally {
-      setCarregando(false);
+      console.error("Erro ao buscar categorias ativas:", erro);
     }
+
+    try {
+      const respostaCategoriasInativas = await api.get("/categorias/inativas", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      categoriasInativas = Array.isArray(respostaCategoriasInativas.data)
+        ? respostaCategoriasInativas.data
+        : respostaCategoriasInativas.data.categorias || [];
+    } catch (erro) {
+      console.warn("Erro ao buscar categorias inativas:", erro);
+    }
+
+    const listaProdutos = [
+      ...produtosAtivos,
+      ...produtosInativos
+    ];
+
+    const produtosSemDuplicar = listaProdutos.filter(
+      (produto, index, array) =>
+        index ===
+        array.findIndex((item) => item.id_produto === produto.id_produto)
+    );
+
+    const listaCategorias = [
+      ...categoriasAtivas,
+      ...categoriasInativas
+    ];
+
+    const categoriasSemDuplicar = listaCategorias.filter(
+      (categoria, index, array) =>
+        index ===
+        array.findIndex(
+          (item) => item.id_categoria === categoria.id_categoria
+        )
+    );
+
+    setProdutos(produtosSemDuplicar);
+    setCategorias(categoriasSemDuplicar);
+  } catch (erro) {
+    console.error("Erro geral ao carregar produtos:", erro);
+    toast.error("Não foi possível carregar os produtos.");
+  } finally {
+    setCarregando(false);
   }
+}
 
 function montarUrlImagem(caminho) {
   if (!caminho) {
