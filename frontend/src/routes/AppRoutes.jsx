@@ -23,7 +23,7 @@ import AdminProdutos from "../pages/AdminProdutos/AdminProdutos.jsx";
 import AdminProdutoNovo from "../pages/AdminProdutoNovo/AdminProdutoNovo.jsx";
 import AdminCategorias from "../pages/AdminCategorias/AdminCategorias.jsx";
 import AdminImagens from "../pages/AdminImagens/AdminImagens.jsx";
-
+import AdminPerfil from "../pages/AdminPerfil/AdminPerfil.jsx";
 function AppRoutes() {
   const location = useLocation();
 
@@ -58,15 +58,17 @@ function AppRoutes() {
           path="/imagens"
           element={<Navigate to="/dashboard/imagens" replace />}
         />
+        <Route path="/dashboard/perfil" element={<AdminPerfil />} />
 
         {/* ROTAS PROTEGIDAS DO ADMIN */}
         <Route element={<RotaProtegida />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/produtos" element={<AdminProdutos />} />
-          <Route path="/dashboard/produtos/novo" element={<AdminProdutoNovo />} />
-          <Route path="/dashboard/categorias" element={<AdminCategorias />} />
-          <Route path="/dashboard/imagens" element={<AdminImagens />} />
-        </Route>
+  <Route path="/dashboard" element={<Dashboard />} />
+  <Route path="/dashboard/produtos" element={<AdminProdutos />} />
+  <Route path="/dashboard/produtos/novo" element={<AdminProdutoNovo />} />
+  <Route path="/dashboard/categorias" element={<AdminCategorias />} />
+  <Route path="/dashboard/imagens" element={<AdminImagens />} />
+  <Route path="/dashboard/perfil" element={<AdminPerfil />} />
+</Route>
 
         {/* QUALQUER ROTA ERRADA VOLTA PARA HOME */}
         <Route path="*" element={<Navigate to="/" replace />} />

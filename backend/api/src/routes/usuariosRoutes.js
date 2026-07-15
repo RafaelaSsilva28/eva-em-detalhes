@@ -4,8 +4,12 @@ import {
   cadastrarUsuario,
   login,
   listarUsuarios,
+  buscarUsuarioPorId,
   atualizarUsuario,
-  excluirUsuario
+  excluirUsuario,
+  buscarPerfilUsuario,
+  atualizarPerfilUsuario,
+  alterarSenhaUsuario
 } from "../controllers/usuariosController.js";
 
 import autenticarToken from "../middlewares/autenticarToken.js";
@@ -15,6 +19,24 @@ const router = express.Router();
 router.post(
   "/login",
   login
+);
+
+router.get(
+  "/usuarios/perfil",
+  autenticarToken,
+  buscarPerfilUsuario
+);
+
+router.patch(
+  "/usuarios/perfil",
+  autenticarToken,
+  atualizarPerfilUsuario
+);
+
+router.patch(
+  "/usuarios/perfil/senha",
+  autenticarToken,
+  alterarSenhaUsuario
 );
 
 router.post(
@@ -27,6 +49,12 @@ router.get(
   "/usuarios",
   autenticarToken,
   listarUsuarios
+);
+
+router.get(
+  "/usuarios/:id",
+  autenticarToken,
+  buscarUsuarioPorId
 );
 
 router.patch(

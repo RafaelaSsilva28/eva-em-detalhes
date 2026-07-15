@@ -1,0 +1,395 @@
+.adminPerfilPagina {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 42px;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(251, 213, 217, 0.95), transparent 32%),
+    radial-gradient(circle at 96% 8%, rgba(200, 206, 139, 0.35), transparent 24%),
+    linear-gradient(135deg, var(--creme), var(--rosa-suave) 58%, #fff);
+  color: var(--texto);
+}
+
+.adminPerfilDecoracao {
+  position: absolute;
+  z-index: 0;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.adminPerfilDecoracaoUm {
+  width: 290px;
+  height: 290px;
+  right: -120px;
+  top: 130px;
+  border: 34px solid rgba(237, 137, 151, 0.22);
+}
+
+.adminPerfilDecoracaoDois {
+  width: 180px;
+  height: 180px;
+  left: -80px;
+  bottom: 90px;
+  border: 28px solid rgba(199, 168, 111, 0.18);
+}
+
+.adminPerfilTopo,
+.adminPerfilResumo,
+.adminPerfilGrid {
+  position: relative;
+  z-index: 1;
+}
+
+.adminPerfilTopo {
+  max-width: 1180px;
+  margin: 0 auto 26px;
+}
+
+.adminPerfilVoltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 34px;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--vinho);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 14px 34px rgba(95, 29, 53, 0.1);
+  transition: 0.25s ease;
+}
+
+.adminPerfilVoltar:hover {
+  transform: translateY(-2px);
+  background: var(--branco);
+  color: var(--rosa-forte);
+}
+
+.adminPerfilTituloArea {
+  max-width: 760px;
+}
+
+.adminPerfilEtiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: rgba(237, 137, 151, 0.15);
+  color: var(--vinho);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.adminPerfilTituloArea h1 {
+  margin: 0;
+  color: var(--vinho-escuro);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(46px, 5vw, 72px);
+  line-height: 0.95;
+}
+
+.adminPerfilTituloArea h1 span {
+  display: inline-block;
+  margin-left: 12px;
+  color: var(--rosa-forte);
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(56px, 6vw, 86px);
+  font-weight: 400;
+}
+
+.adminPerfilTituloArea p {
+  max-width: 620px;
+  margin-top: 16px;
+  color: var(--texto-suave);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.adminPerfilResumo {
+  max-width: 1180px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid rgba(140, 45, 78, 0.09);
+  border-radius: 30px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 22px 58px rgba(95, 29, 53, 0.09);
+  backdrop-filter: blur(14px);
+}
+
+.adminPerfilAvatar {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, var(--rosa-principal), var(--coral));
+  color: white;
+  font-size: 30px;
+  box-shadow: 0 18px 36px rgba(217, 92, 120, 0.28);
+}
+
+.adminPerfilResumo span {
+  color: var(--texto-suave);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.adminPerfilResumo strong {
+  display: block;
+  margin-top: 3px;
+  color: var(--vinho-escuro);
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+}
+
+.adminPerfilResumo p {
+  margin: 5px 0 0;
+  color: var(--texto-suave);
+  font-weight: 700;
+}
+
+.adminPerfilStatus {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 11px 15px;
+  background: rgba(200, 206, 139, 0.22);
+  color: #687125;
+  font-weight: 900;
+}
+
+.adminPerfilGrid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.adminPerfilCard {
+  border: 1px solid rgba(140, 45, 78, 0.09);
+  border-radius: 34px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 26px 68px rgba(95, 29, 53, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+.adminPerfilCardTopo {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.adminPerfilIcone {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 19px;
+  background: rgba(237, 137, 151, 0.16);
+  color: var(--rosa-forte);
+  font-size: 24px;
+}
+
+.adminPerfilCardTopo h2 {
+  margin: 0 0 4px;
+  color: var(--vinho-escuro);
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+}
+
+.adminPerfilCardTopo p {
+  margin: 0;
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+.adminPerfilCampo {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.adminPerfilCampo span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--vinho);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.adminPerfilInputArea {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(140, 45, 78, 0.13);
+  border-radius: 18px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.92);
+  transition: 0.25s ease;
+}
+
+.adminPerfilInputArea:focus-within {
+  border-color: rgba(217, 92, 120, 0.65);
+  box-shadow: 0 0 0 4px rgba(237, 137, 151, 0.15);
+}
+
+.adminPerfilInputArea svg {
+  color: var(--rosa-forte);
+  flex-shrink: 0;
+}
+
+.adminPerfilInputArea input {
+  width: 100%;
+  height: 52px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--texto);
+  font: inherit;
+  font-weight: 700;
+}
+
+.adminPerfilInputArea input::placeholder {
+  color: rgba(71, 51, 58, 0.45);
+}
+
+.adminPerfilOlho {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(237, 137, 151, 0.12);
+  color: var(--vinho);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.adminPerfilOlho:hover {
+  background: var(--rosa-principal);
+  color: white;
+}
+
+.adminPerfilBotaoPrincipal,
+.adminPerfilBotaoSecundario {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 18px 38px rgba(217, 92, 120, 0.25);
+  transition: 0.25s ease;
+}
+
+.adminPerfilBotaoPrincipal {
+  background: linear-gradient(135deg, var(--rosa-forte), var(--coral));
+}
+
+.adminPerfilBotaoSecundario {
+  background: linear-gradient(135deg, var(--vinho), var(--vinho-escuro));
+}
+
+.adminPerfilBotaoPrincipal:hover,
+.adminPerfilBotaoSecundario:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+.adminPerfilBotaoPrincipal:disabled,
+.adminPerfilBotaoSecundario:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.adminPerfilCarregando {
+  min-height: calc(100vh - 84px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--vinho);
+  font-weight: 900;
+}
+
+.adminPerfilLoader {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 4px solid rgba(237, 137, 151, 0.2);
+  border-top-color: var(--rosa-forte);
+  animation: adminPerfilGirar 0.8s linear infinite;
+}
+
+@keyframes adminPerfilGirar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 980px) {
+  .adminPerfilPagina {
+    padding: 30px 18px;
+  }
+
+  .adminPerfilGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .adminPerfilResumo {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .adminPerfilStatus {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .adminPerfilTituloArea h1 span {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  .adminPerfilResumo {
+    border-radius: 24px;
+  }
+
+  .adminPerfilCard {
+    padding: 22px;
+    border-radius: 28px;
+  }
+
+  .adminPerfilCardTopo {
+    align-items: flex-start;
+  }
+}

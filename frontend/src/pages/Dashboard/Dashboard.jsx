@@ -187,6 +187,12 @@ function Dashboard() {
       descricao: "Cadastrar fotos e definir imagens principais.",
       icone: <FiCamera />,
       caminho: "/dashboard/imagens"
+    },
+    {
+      titulo: "Meu perfil",
+      descricao: "Alterar nome, e-mail e senha da administradora.",
+      icone: <FiUser />,
+      caminho: "/dashboard/perfil"
     }
   ];
 
@@ -223,6 +229,11 @@ function Dashboard() {
           <Link to="/dashboard/imagens" className="dashboardMenuItem">
             <FiImage />
             Imagens
+          </Link>
+
+          <Link to="/dashboard/perfil" className="dashboardMenuItem">
+            <FiUser />
+            Perfil
           </Link>
 
           <Link to="/" className="dashboardMenuItem">
@@ -265,6 +276,11 @@ function Dashboard() {
               <FiRefreshCw />
               Atualizar
             </button>
+
+            <Link to="/dashboard/perfil" className="dashboardBotaoSecundario">
+              <FiUser />
+              Meu perfil
+            </Link>
 
             <Link to="/dashboard/produtos/novo" className="dashboardBotaoPrimario">
               <FiPlusCircle />
