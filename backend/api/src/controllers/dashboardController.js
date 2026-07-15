@@ -9,7 +9,8 @@ export async function buscarDadosDashboard(req, res) {
       ultimosProdutosResultado
     ] = await Promise.all([
       pool.query(
-        `SELECT
+        `
+        SELECT
           COUNT(*) FILTER (
             WHERE ativo = TRUE
           )::INTEGER AS total_produtos_ativos,
@@ -18,27 +19,31 @@ export async function buscarDadosDashboard(req, res) {
             WHERE ativo = TRUE
             AND sob_encomenda = TRUE
           )::INTEGER AS produtos_sob_encomenda_ativos
-        FROM produtos`
+        FROM produtos
+        `
       ),
 
       pool.query(
-        `SELECT
+        `
+        SELECT
           COUNT(*) FILTER (
             WHERE ativo = TRUE
           )::INTEGER AS categorias_ativas
-        FROM categorias`
+        FROM categorias
+        `
       ),
 
       pool.query(
-        `SELECT
-          COUNT(*) FILTER (
-            WHERE ativo = TRUE
-          )::INTEGER AS total_imagens_ativas
-        FROM imagens_produto`
+        `
+        SELECT
+          COUNT(*)::INTEGER AS total_imagens_ativas
+        FROM imagens_produto
+        `
       ),
 
       pool.query(
-        `SELECT
+        `
+        SELECT
           p.id_produto,
           p.nome,
           p.preco,
@@ -55,7 +60,6 @@ export async function buscarDadosDashboard(req, res) {
             FROM imagens_produto ip
             WHERE ip.produto_id = p.id_produto
             AND ip.principal = TRUE
-            AND ip.ativo = TRUE
             LIMIT 1
           ) AS imagem_principal
         FROM produtos p
@@ -63,7 +67,8 @@ export async function buscarDadosDashboard(req, res) {
           ON c.id_categoria = p.categoria_id
         WHERE p.ativo = TRUE
         ORDER BY p.criado_em DESC
-        LIMIT 5`
+        LIMIT 5
+        `
       )
     ]);
 
