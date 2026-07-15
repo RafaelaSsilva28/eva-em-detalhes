@@ -31,18 +31,13 @@ app.use(
   })
 );
 
-/*
-  Como este arquivo app.js está dentro de:
-  backend/api/src/app.js
+const pastaUploads =
+  process.env.UPLOAD_DIR ||
+  path.join(__dirname, "..", "uploads");
 
-  E a pasta uploads está em:
-  backend/api/uploads
-
-  usamos ".." para sair da pasta src.
-*/
 app.use(
   "/uploads",
-  express.static(path.join(__dirname, "..", "uploads"))
+  express.static(pastaUploads)
 );
 
 app.use(
@@ -54,7 +49,7 @@ app.use(
 app.get("/", (req, res) => {
   return res.status(200).json({
     mensagem: "API EVA em Detalhes funcionando.",
-    documentacao: "http://localhost:3001/docs"
+    documentacao: `${req.protocol}://${req.get("host")}/docs`
   });
 });
 
@@ -104,6 +99,7 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, async () => {
   console.log(`Servidor rodando na porta ${PORT}.`);
   console.log(`Swagger disponível em http://localhost:${PORT}/docs`);
+  console.log(`Uploads servidos a partir de: ${pastaUploads}`);
 
   await testarConexao();
 });

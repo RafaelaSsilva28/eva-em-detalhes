@@ -2,7 +2,8 @@ import multer from "multer";
 import path from "path";
 import fs from "fs";
 
-const pastaUploads = path.resolve("uploads");
+const pastaUploads =
+  process.env.UPLOAD_DIR || path.resolve("uploads");
 
 if (!fs.existsSync(pastaUploads)) {
   fs.mkdirSync(pastaUploads, {
@@ -39,11 +40,7 @@ function filtroArquivo(req, file, cb) {
     return;
   }
 
-  cb(
-    new Error(
-      "Formato inválido. Envie imagens JPG, PNG ou WEBP."
-    )
-  );
+  cb(new Error("Formato inválido. Envie imagens JPG, PNG ou WEBP."));
 }
 
 const upload = multer({
