@@ -1,0 +1,1979 @@
+.home {
+  min-height: 100vh;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.homeHero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    135px 0 90px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(237, 137, 151, 0.22),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 22%,
+      rgba(133, 141, 58, 0.14),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 78% 82%,
+      rgba(238, 109, 114, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #fffaf7 0%,
+      #fff0f3 48%,
+      #fff8ec 100%
+    );
+}
+
+.homeHeroContainer {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(360px, 0.95fr);
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.homeConteudo {
+  max-width: 650px;
+}
+
+.homeTag {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+  padding: 9px 17px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 10px 28px rgba(95, 29, 53, 0.09);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.homeConteudo h1 {
+  margin-bottom: 24px;
+
+  font-size:
+    clamp(56px, 8vw, 98px);
+
+  line-height: 0.92;
+}
+
+.homeConteudo h1 span {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--rosa-forte);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: 0.78em;
+  font-weight: 400;
+}
+
+.homeConteudo p {
+  max-width: 560px;
+
+  margin-bottom: 34px;
+
+  color: var(--texto-suave);
+
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.homeBotoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.homeVisual {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 550px;
+}
+
+.homeImagemMoldura {
+  position: relative;
+
+  width: min(430px, 100%);
+  aspect-ratio: 0.86 / 1;
+
+  padding: 18px;
+
+  border-radius:
+    45% 55% 52% 48% / 42% 48% 52% 58%;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(251, 213, 217, 0.72)
+    );
+
+  border:
+    1px solid rgba(140, 45, 78, 0.11);
+
+  box-shadow:
+    0 30px 70px rgba(95, 29, 53, 0.16);
+
+  animation:
+    homeFlutuar 7s ease-in-out infinite;
+}
+
+.homeImagemInterna {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    46% 54% 55% 45% / 52% 42% 58% 48%;
+
+  background:
+    radial-gradient(
+      circle at 35% 24%,
+      rgba(255, 255, 255, 0.92),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      var(--rosa-claro),
+      var(--creme)
+    );
+
+  border:
+    2px dashed rgba(140, 45, 78, 0.13);
+}
+
+.homeImagemTexto {
+  color: var(--vinho);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(86px, 10vw, 140px);
+
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.homeImagemInterna small {
+  margin-top: -8px;
+
+  color: var(--rosa-forte);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: 38px;
+}
+
+.homeSelo {
+  position: absolute;
+
+  right: -20px;
+  top: 55px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 16px;
+
+  border-radius: 999px;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 15px 30px rgba(140, 45, 78, 0.25);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.homeSelo svg {
+  fill: currentColor;
+}
+
+.miniFlor {
+  position: absolute;
+
+  width: 62px;
+  height: 62px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      var(--creme) 0 18%,
+      transparent 19%
+    ),
+    conic-gradient(
+      from 0deg,
+      var(--rosa-principal),
+      var(--rosa-claro),
+      var(--rosa-forte),
+      var(--rosa-principal)
+    );
+
+  opacity: 0.8;
+
+  filter:
+    drop-shadow(
+      0 12px 20px rgba(140, 45, 78, 0.14)
+    );
+
+  animation:
+    homeGirar 16s linear infinite;
+}
+
+.miniFlorUm {
+  left: 28px;
+  bottom: 95px;
+}
+
+.miniFlorDois {
+  right: 28px;
+  bottom: 38px;
+
+  width: 43px;
+  height: 43px;
+
+  opacity: 0.55;
+
+  animation-duration: 13s;
+  animation-direction: reverse;
+}
+
+/* =========================================================
+   DECORAÇÕES HERO
+========================================================= */
+
+.homeFundo {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.forma {
+  position: absolute;
+
+  border-radius:
+    55% 45% 63% 37% / 45% 54% 46% 55%;
+
+  animation:
+    homeFlutuar 9s ease-in-out infinite;
+}
+
+.formaRosa {
+  width: 360px;
+  height: 360px;
+
+  left: -130px;
+  top: 120px;
+
+  background:
+    rgba(237, 137, 151, 0.18);
+}
+
+.formaVerde {
+  width: 260px;
+  height: 260px;
+
+  right: -80px;
+  top: 150px;
+
+  background:
+    rgba(133, 141, 58, 0.12);
+
+  animation-delay: -3s;
+}
+
+.formaCoral {
+  width: 210px;
+  height: 210px;
+
+  left: 48%;
+  bottom: -90px;
+
+  background:
+    rgba(238, 109, 114, 0.11);
+
+  animation-delay: -5s;
+}
+
+.flor {
+  position: absolute;
+
+  width: 88px;
+  height: 88px;
+
+  opacity: 0.65;
+
+  animation:
+    homeFlutuar 7s ease-in-out infinite;
+}
+
+.flor span {
+  position: absolute;
+
+  left: 32px;
+  top: 2px;
+
+  width: 24px;
+  height: 43px;
+
+  border-radius:
+    52% 52% 48% 48%;
+
+  background:
+    linear-gradient(
+      var(--rosa-principal),
+      var(--rosa-forte)
+    );
+
+  transform-origin:
+    12px 42px;
+}
+
+.flor span:nth-child(2) {
+  transform: rotate(72deg);
+}
+
+.flor span:nth-child(3) {
+  transform: rotate(144deg);
+}
+
+.flor span:nth-child(4) {
+  transform: rotate(216deg);
+}
+
+.flor span:nth-child(5) {
+  transform: rotate(288deg);
+}
+
+.flor i {
+  position: absolute;
+
+  left: 33px;
+  top: 32px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: var(--creme);
+
+  border:
+    2px dashed var(--vinho);
+}
+
+.florUm {
+  left: 8%;
+  bottom: 18%;
+}
+
+.florDois {
+  right: 9%;
+  top: 21%;
+
+  transform: scale(0.74);
+
+  animation-delay: -4s;
+}
+
+.folha {
+  position: absolute;
+
+  width: 55px;
+  height: 100px;
+
+  border-radius:
+    90% 0 90% 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--verde-claro),
+      var(--verde-oliva)
+    );
+
+  opacity: 0.3;
+}
+
+.folhaUm {
+  left: 36%;
+  top: 22%;
+
+  transform:
+    rotate(-35deg);
+}
+
+.folhaDois {
+  right: 33%;
+  bottom: 15%;
+
+  transform:
+    rotate(20deg)
+    scale(0.8);
+}
+
+.folhaTres {
+  left: 6%;
+  top: 58%;
+
+  transform:
+    rotate(40deg)
+    scale(0.7);
+}
+
+.desenhoIcone {
+  position: absolute;
+
+  color:
+    rgba(140, 45, 78, 0.16);
+
+  filter:
+    drop-shadow(
+      0 8px 12px rgba(140, 45, 78, 0.07)
+    );
+
+  animation:
+    homeFlutuar 6s ease-in-out infinite;
+}
+
+.tesouraDecorativa {
+  left: 17%;
+  top: 31%;
+
+  font-size: 46px;
+
+  transform: rotate(-18deg);
+}
+
+.coracaoDecorativo {
+  right: 27%;
+  top: 28%;
+
+  font-size: 38px;
+
+  animation-delay: -2s;
+}
+
+.estrelaDecorativa {
+  left: 45%;
+  bottom: 21%;
+
+  font-size: 36px;
+
+  animation-delay: -4s;
+}
+
+.linhaCostura {
+  position: absolute;
+
+  border-top:
+    2px dashed rgba(140, 45, 78, 0.16);
+
+  border-radius: 50%;
+}
+
+.linhaCosturaUm {
+  width: 250px;
+  height: 80px;
+
+  left: 24%;
+  top: 19%;
+
+  transform: rotate(12deg);
+}
+
+.linhaCosturaDois {
+  width: 220px;
+  height: 80px;
+
+  right: 8%;
+  bottom: 22%;
+
+  transform: rotate(-12deg);
+}
+
+.bolinha {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--rosa-principal);
+
+  animation:
+    homePulso 4s ease-in-out infinite;
+}
+
+.bolinhaUm {
+  left: 20%;
+  bottom: 27%;
+}
+
+.bolinhaDois {
+  right: 22%;
+  top: 46%;
+
+  background: var(--verde-oliva);
+
+  animation-delay: -1s;
+}
+
+.bolinhaTres {
+  left: 52%;
+  top: 16%;
+
+  background: var(--coral);
+
+  animation-delay: -2s;
+}
+
+.bolinhaQuatro {
+  right: 6%;
+  bottom: 38%;
+
+  background: var(--dourado);
+
+  animation-delay: -3s;
+}
+
+/* =========================================================
+   DESTAQUES
+========================================================= */
+
+.homeDestaques {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 7% 18%,
+      rgba(237, 137, 151, 0.14),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 92% 82%,
+      rgba(133, 141, 58, 0.1),
+      transparent 26%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf8,
+      #fff1f3
+    );
+
+  overflow: hidden;
+}
+
+.homeDestaquesFundo {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.destaqueForma {
+  position: absolute;
+
+  border-radius:
+    46% 54% 57% 43% / 54% 45% 55% 46%;
+}
+
+.destaqueFormaUm {
+  width: 300px;
+  height: 300px;
+
+  left: -120px;
+  top: 120px;
+
+  background:
+    rgba(237, 137, 151, 0.13);
+}
+
+.destaqueFormaDois {
+  width: 250px;
+  height: 250px;
+
+  right: -120px;
+  bottom: 80px;
+
+  background:
+    rgba(133, 141, 58, 0.1);
+}
+
+.destaqueCostura {
+  position: absolute;
+
+  right: 17%;
+  top: 100px;
+
+  width: 220px;
+  height: 80px;
+
+  border-top:
+    2px dashed rgba(140, 45, 78, 0.14);
+
+  border-radius: 50%;
+
+  transform: rotate(-8deg);
+}
+
+.destaqueFlor {
+  position: absolute;
+
+  left: 8%;
+  bottom: 70px;
+
+  width: 84px;
+  height: 84px;
+
+  opacity: 0.38;
+
+  animation:
+    homeGirar 20s linear infinite;
+}
+
+.destaqueFlor span {
+  position: absolute;
+
+  left: 31px;
+  top: 3px;
+
+  width: 23px;
+  height: 40px;
+
+  border-radius:
+    52% 52% 48% 48%;
+
+  background:
+    linear-gradient(
+      var(--rosa-principal),
+      var(--rosa-forte)
+    );
+
+  transform-origin:
+    11px 39px;
+}
+
+.destaqueFlor span:nth-child(2) {
+  transform: rotate(72deg);
+}
+
+.destaqueFlor span:nth-child(3) {
+  transform: rotate(144deg);
+}
+
+.destaqueFlor span:nth-child(4) {
+  transform: rotate(216deg);
+}
+
+.destaqueFlor span:nth-child(5) {
+  transform: rotate(288deg);
+}
+
+.destaqueFlor i {
+  position: absolute;
+
+  left: 32px;
+  top: 31px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: var(--creme);
+
+  border:
+    2px dashed var(--vinho);
+}
+
+.homeDestaquesCabecalho {
+  position: relative;
+  z-index: 2;
+}
+
+.homeDestaquesGrid {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+.homeDestaquesAnimado {
+  animation:
+    homeCardsEntrada 0.45s ease both;
+}
+
+.homeDestaquesIndicadores {
+  position: relative;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 34px;
+}
+
+.indicadorProduto {
+  width: 11px;
+  height: 11px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(140, 45, 78, 0.2);
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.indicadorProduto:hover {
+  transform: scale(1.14);
+}
+
+.indicadorProdutoAtivo {
+  width: 34px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+}
+
+.homeDestaquesAcao {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 42px;
+}
+
+.homeSemDestaques {
+  position: relative;
+  z-index: 3;
+
+  max-width: 560px;
+
+  margin: 0 auto;
+  padding: 50px 30px;
+
+  text-align: center;
+
+  border-radius: 34px;
+
+  background:
+    rgba(255, 255, 255, 0.74);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 22px 55px rgba(95, 29, 53, 0.11);
+}
+
+.homeSemDestaquesIcone {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 18px;
+
+  border-radius:
+    45% 55% 57% 43% / 53% 44% 56% 47%;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+}
+
+.homeSemDestaquesIcone svg {
+  font-size: 30px;
+}
+
+.homeSemDestaques h3 {
+  margin-bottom: 10px;
+
+  font-size: 30px;
+}
+
+.homeSemDestaques p {
+  max-width: 420px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   SKELETON
+========================================================= */
+
+.produtoSkeleton {
+  padding: 11px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.08);
+
+  box-shadow: var(--sombra-suave);
+}
+
+.skeletonImagem {
+  height: 310px;
+
+  border-radius: 23px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(251, 213, 217, 0.55),
+      rgba(255, 255, 255, 0.9),
+      rgba(251, 213, 217, 0.55)
+    );
+
+  background-size: 220% 100%;
+
+  animation:
+    homeSkeleton 1.5s infinite;
+}
+
+.skeletonConteudo {
+  padding: 22px 12px 14px;
+}
+
+.skeletonConteudo span,
+.skeletonConteudo strong,
+.skeletonConteudo p {
+  display: block;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(251, 213, 217, 0.55),
+      rgba(255, 255, 255, 0.9),
+      rgba(251, 213, 217, 0.55)
+    );
+
+  background-size: 220% 100%;
+
+  animation:
+    homeSkeleton 1.5s infinite;
+}
+
+.skeletonConteudo span {
+  width: 40%;
+  height: 10px;
+
+  margin-bottom: 14px;
+}
+
+.skeletonConteudo strong {
+  width: 72%;
+  height: 23px;
+
+  margin-bottom: 17px;
+}
+
+.skeletonConteudo p {
+  width: 100%;
+  height: 9px;
+
+  margin-bottom: 9px;
+}
+
+.skeletonConteudo p:last-child {
+  width: 74%;
+}
+
+/* =========================================================
+   SERVIÇOS
+========================================================= */
+
+.homeServicos {
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff1f3,
+      #fffaf7
+    );
+}
+
+.homeServicosGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.homeServicoCard {
+  position: relative;
+
+  min-height: 295px;
+
+  padding: 30px 24px;
+
+  border-radius: 30px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(237, 137, 151, 0.16),
+      transparent 32%
+    ),
+    rgba(255, 255, 255, 0.72);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 20px 45px rgba(95, 29, 53, 0.1);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.homeServicoCard:hover {
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 28px 60px rgba(95, 29, 53, 0.15);
+}
+
+.homeServicoIcone {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius:
+    42% 58% 58% 42% / 52% 42% 58% 48%;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 12px 28px rgba(140, 45, 78, 0.23);
+}
+
+.homeServicoIcone svg {
+  font-size: 27px;
+}
+
+.homeServicoCard h3 {
+  margin-bottom: 12px;
+
+  color: var(--vinho-escuro);
+
+  font-size: 25px;
+}
+
+.homeServicoCard p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.homeServicoBrilho {
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  right: -30px;
+  bottom: -30px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(251, 213, 217, 0.4);
+}
+
+/* =========================================================
+   PERSONALIZADOS
+========================================================= */
+
+.homePersonalizados {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(237, 137, 151, 0.16),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(133, 141, 58, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #fffaf7,
+      #fff0f3
+    );
+
+  overflow: hidden;
+}
+
+.homePersonalizadosFundo {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.personalizadoForma {
+  position: absolute;
+
+  border-radius:
+    50% 50% 64% 36% / 55% 44% 56% 45%;
+}
+
+.personalizadoFormaUm {
+  width: 300px;
+  height: 300px;
+
+  left: -110px;
+  bottom: 70px;
+
+  background:
+    rgba(237, 137, 151, 0.15);
+}
+
+.personalizadoFormaDois {
+  width: 240px;
+  height: 240px;
+
+  right: -90px;
+  top: 80px;
+
+  background:
+    rgba(133, 141, 58, 0.11);
+}
+
+.personalizadoCostura {
+  position: absolute;
+
+  left: 45%;
+  top: 105px;
+
+  width: 260px;
+  height: 90px;
+
+  border-top:
+    2px dashed rgba(140, 45, 78, 0.15);
+
+  border-radius: 50%;
+
+  transform: rotate(9deg);
+}
+
+.homePersonalizadosContainer {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.homePersonalizadosVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homePersonalizadosQuadro {
+  position: relative;
+
+  width: min(390px, 100%);
+  aspect-ratio: 0.95 / 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 36px;
+
+  border-radius:
+    43% 57% 54% 46% / 46% 45% 55% 54%;
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 255, 255, 0.86),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      var(--rosa-claro),
+      var(--creme)
+    );
+
+  border:
+    1px solid rgba(140, 45, 78, 0.12);
+
+  box-shadow:
+    0 28px 70px rgba(95, 29, 53, 0.16);
+}
+
+.homePersonalizadosEtiqueta {
+  position: absolute;
+
+  left: 30px;
+  top: 32px;
+
+  padding: 9px 15px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 9px 22px rgba(95, 29, 53, 0.09);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.homePersonalizadosFlor {
+  position: relative;
+
+  width: 120px;
+  height: 120px;
+
+  margin-bottom: 24px;
+
+  animation:
+    homeGirar 20s linear infinite;
+}
+
+.homePersonalizadosFlor span {
+  position: absolute;
+
+  left: 43px;
+  top: 3px;
+
+  width: 34px;
+  height: 58px;
+
+  border-radius:
+    52% 52% 48% 48%;
+
+  background:
+    linear-gradient(
+      var(--rosa-principal),
+      var(--rosa-forte)
+    );
+
+  transform-origin:
+    17px 57px;
+}
+
+.homePersonalizadosFlor span:nth-child(2) {
+  transform: rotate(72deg);
+}
+
+.homePersonalizadosFlor span:nth-child(3) {
+  transform: rotate(144deg);
+}
+
+.homePersonalizadosFlor span:nth-child(4) {
+  transform: rotate(216deg);
+}
+
+.homePersonalizadosFlor span:nth-child(5) {
+  transform: rotate(288deg);
+}
+
+.homePersonalizadosFlor i {
+  position: absolute;
+
+  left: 43px;
+  top: 43px;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background: var(--creme);
+
+  border:
+    2px dashed var(--vinho);
+}
+
+.homePersonalizadosQuadro strong {
+  color: var(--vinho);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 36px;
+  line-height: 1.1;
+
+  text-align: center;
+}
+
+.homePersonalizadosQuadro small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--rosa-forte);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.homePersonalizadosTexto p {
+  margin-bottom: 25px;
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.homeMotivosLista {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+.homeMotivoItem {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--texto);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.homeMotivoItem svg {
+  flex-shrink: 0;
+
+  color: var(--rosa-forte);
+
+  font-size: 19px;
+}
+
+.homePersonalizadosBotoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 13px;
+}
+
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.homeComoFunciona {
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff0f3,
+      #fff9f4
+    );
+}
+
+.homeEtapas {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.homeEtapaCard {
+  position: relative;
+
+  padding: 30px 22px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 18px 42px rgba(95, 29, 53, 0.09);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.homeEtapaCard:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 24px 55px rgba(95, 29, 53, 0.14);
+}
+
+.homeEtapaNumero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 18px;
+
+  border-radius:
+    42% 58% 58% 42% / 52% 42% 58% 48%;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 12px 28px rgba(140, 45, 78, 0.22);
+
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.homeEtapaCard h3 {
+  margin-bottom: 10px;
+
+  color: var(--vinho-escuro);
+
+  font-size: 22px;
+}
+
+.homeEtapaCard p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   CHAMADA FINAL
+========================================================= */
+
+.homeChamadaFinal {
+  padding:
+    70px 0 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff9f4,
+      #fff1f3
+    );
+}
+
+.homeChamadaCard {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 48px;
+
+  border-radius: 38px;
+
+  background:
+    radial-gradient(
+      circle at 92% 15%,
+      rgba(237, 137, 151, 0.2),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.86),
+      rgba(255, 236, 239, 0.82)
+    );
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 25px 65px rgba(95, 29, 53, 0.13);
+
+  overflow: hidden;
+}
+
+.homeChamadaDecoracao {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.homeChamadaDecoracao span {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background:
+    rgba(237, 137, 151, 0.15);
+}
+
+.homeChamadaDecoracao span:nth-child(1) {
+  width: 150px;
+  height: 150px;
+
+  right: -45px;
+  top: -45px;
+}
+
+.homeChamadaDecoracao span:nth-child(2) {
+  width: 105px;
+  height: 105px;
+
+  left: 36%;
+  bottom: -40px;
+
+  background:
+    rgba(133, 141, 58, 0.1);
+}
+
+.homeChamadaDecoracao span:nth-child(3) {
+  width: 60px;
+  height: 60px;
+
+  left: 35px;
+  top: 35px;
+
+  background:
+    rgba(238, 109, 114, 0.12);
+}
+
+.homeChamadaTexto {
+  position: relative;
+  z-index: 2;
+}
+
+.homeChamadaTexto h2 {
+  max-width: 720px;
+
+  margin-bottom: 15px;
+
+  font-size:
+    clamp(34px, 5vw, 56px);
+
+  line-height: 1.05;
+}
+
+.homeChamadaTexto p {
+  max-width: 600px;
+
+  font-size: 15px;
+}
+
+.homeChamadaBotoes {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  gap: 13px;
+}
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes homeFlutuar {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform:
+      translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes homeGirar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes homePulso {
+  0%,
+  100% {
+    opacity: 0.55;
+    scale: 1;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.25;
+  }
+}
+
+@keyframes homeCardsEntrada {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+@keyframes homeSkeleton {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1100px) {
+  .homeHeroContainer,
+  .homePersonalizadosContainer {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .homeConteudo {
+    max-width: 780px;
+
+    text-align: center;
+
+    margin: 0 auto;
+  }
+
+  .homeConteudo p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .homeBotoes {
+    justify-content: center;
+  }
+
+  .homeVisual {
+    min-height: 460px;
+  }
+
+  .homePersonalizadosTexto {
+    text-align: center;
+  }
+
+  .homeMotivosLista {
+    max-width: 560px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .homeMotivoItem {
+    justify-content: center;
+  }
+
+  .homePersonalizadosBotoes {
+    justify-content: center;
+  }
+
+  .homeServicosGrid,
+  .homeEtapas {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .homeChamadaCard {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .homeChamadaTexto h2,
+  .homeChamadaTexto p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .homeChamadaBotoes {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .homeDestaquesGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .homeHero {
+    padding:
+      130px 0 75px;
+  }
+
+  .homeVisual {
+    min-height: 420px;
+  }
+
+  .homeImagemMoldura {
+    width: min(360px, 88vw);
+  }
+}
+
+@media (max-width: 700px) {
+  .homeHero {
+    min-height: auto;
+
+    padding:
+      125px 0 65px;
+  }
+
+  .homeHeroContainer {
+    gap: 35px;
+  }
+
+  .homeConteudo h1 {
+    font-size:
+      clamp(46px, 14vw, 64px);
+  }
+
+  .homeConteudo p {
+    font-size: 15px;
+  }
+
+  .homeBotoes,
+  .homePersonalizadosBotoes,
+  .homeChamadaBotoes {
+    width: 100%;
+  }
+
+  .homeBotoes .btnPrimario,
+  .homeBotoes .btnSecundario,
+  .homePersonalizadosBotoes .btnPrimario,
+  .homePersonalizadosBotoes .btnSecundario,
+  .homeChamadaBotoes .btnPrimario,
+  .homeChamadaBotoes .btnSecundario {
+    width: 100%;
+  }
+
+  .homeVisual {
+    min-height: 365px;
+  }
+
+  .homeImagemMoldura {
+    width: min(310px, 88vw);
+  }
+
+  .homeSelo {
+    right: -2px;
+    top: 35px;
+  }
+
+  .miniFlorUm {
+    left: 8px;
+    bottom: 70px;
+  }
+
+  .miniFlorDois {
+    right: 12px;
+  }
+
+  .homeDestaquesGrid,
+  .homeServicosGrid,
+  .homeEtapas {
+    grid-template-columns: 1fr;
+  }
+
+  .homeDestaquesGrid {
+    max-width: 420px;
+
+    margin: 0 auto;
+  }
+
+  .homeServicosGrid,
+  .homeEtapas {
+    max-width: 420px;
+
+    margin: 0 auto;
+  }
+
+  .homeServicoCard {
+    min-height: auto;
+
+    text-align: center;
+  }
+
+  .homeServicoIcone {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .homePersonalizadosContainer {
+    gap: 34px;
+  }
+
+  .homePersonalizadosQuadro {
+    width: min(300px, 88vw);
+  }
+
+  .homePersonalizadosQuadro strong {
+    font-size: 30px;
+  }
+
+  .homePersonalizadosQuadro small {
+    font-size: 30px;
+  }
+
+  .homeMotivoItem {
+    justify-content: flex-start;
+
+    text-align: left;
+  }
+
+  .homeChamadaCard {
+    padding: 38px 24px;
+
+    border-radius: 30px;
+  }
+
+  .florUm,
+  .linhaCosturaUm,
+  .folhaUm,
+  .tesouraDecorativa {
+    opacity: 0.22;
+  }
+
+  .florDois,
+  .linhaCosturaDois {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .homeHero {
+    padding:
+      112px 0 58px;
+  }
+
+  .homeTag,
+  .secaoTag {
+    font-size: 10px;
+  }
+
+  .homeConteudo h1 {
+    font-size:
+      clamp(42px, 15vw, 56px);
+  }
+
+  .homeImagemMoldura {
+    width: min(280px, 88vw);
+  }
+
+  .homeImagemTexto {
+    font-size: 82px;
+  }
+
+  .homeImagemInterna small {
+    font-size: 30px;
+  }
+
+  .homeSelo {
+    font-size: 10px;
+
+    padding: 9px 12px;
+  }
+
+  .produtoSkeleton,
+  .homeServicoCard,
+  .homeEtapaCard {
+    border-radius: 25px;
+  }
+
+  .skeletonImagem {
+    height: 280px;
+  }
+
+  .homePersonalizadosQuadro {
+    width: min(270px, 88vw);
+  }
+
+  .homeChamadaTexto h2 {
+    font-size: 31px;
+  }
+}

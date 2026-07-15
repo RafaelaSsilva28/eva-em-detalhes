@@ -1,0 +1,744 @@
+.navbar {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+  z-index: 900;
+
+  width: 100%;
+
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    backdrop-filter 0.35s ease,
+    padding 0.35s ease;
+}
+
+.navbarTopo {
+  padding:
+    14px 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 248, 246, 0.78),
+      rgba(255, 248, 246, 0.48),
+      transparent
+    );
+}
+
+.navbarRolada {
+  padding:
+    8px 0;
+
+  background:
+    rgba(255, 248, 246, 0.88);
+
+  box-shadow:
+    0 16px 38px rgba(95, 29, 53, 0.1);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.navbarContainer {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 22px;
+}
+
+/* =========================================================
+   DECORAÇÃO
+========================================================= */
+
+.navbarDecoracao {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.navbarForma {
+  position: absolute;
+
+  border-radius:
+    55% 45% 63% 37% / 45% 54% 46% 55%;
+
+  opacity: 0.48;
+}
+
+.navbarFormaUm {
+  width: 170px;
+  height: 170px;
+
+  left: -70px;
+  top: -85px;
+
+  background:
+    rgba(237, 137, 151, 0.2);
+}
+
+.navbarFormaDois {
+  width: 135px;
+  height: 135px;
+
+  right: 12%;
+  top: -75px;
+
+  background:
+    rgba(133, 141, 58, 0.12);
+}
+
+.navbarLinha {
+  position: absolute;
+
+  left: 54%;
+  top: 24px;
+
+  width: 180px;
+  height: 56px;
+
+  border-top:
+    2px dashed rgba(140, 45, 78, 0.12);
+
+  border-radius: 50%;
+
+  transform:
+    rotate(-9deg);
+}
+
+ /* =========================================================
+   LOGO
+========================================================= */
+
+.navbarLogo,
+.drawerLogo {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 78px;
+  height: 78px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 12px 28px rgba(95, 29, 53, 0.14);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbarLogo:hover,
+.drawerLogo:hover {
+  transform:
+    translateY(-2px)
+    scale(1.03);
+
+  box-shadow:
+    0 16px 34px rgba(95, 29, 53, 0.18);
+}
+
+.navbarLogo::before,
+.drawerLogo::before {
+  display: none;
+}
+
+.navbarLogoImagem {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  transform: scale(1.08);
+}
+
+.navbarRolada .navbarLogo {
+  width: 66px;
+  height: 66px;
+}
+
+.navbarRolada .navbarLogoImagem {
+  width: 100%;
+  height: 100%;
+
+  transform: scale(1.08);
+}
+
+.drawerLogo {
+  width: 92px;
+  height: 92px;
+
+  border-radius: 50%;
+}
+
+.drawerLogo .navbarLogoImagem {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   LINKS DESKTOP
+========================================================= */
+
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 7px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.56);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.08);
+
+  box-shadow:
+    0 12px 30px rgba(95, 29, 53, 0.07);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.navbarLink {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 38px;
+
+  padding:
+    9px 13px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.navbarLink:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    rgba(251, 213, 217, 0.45);
+}
+
+.navbarLinkAtivo {
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 10px 22px rgba(140, 45, 78, 0.18);
+}
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.navbarAcoes {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.navbarSocial,
+.navbarFavoritos,
+.navbarWhatsapp,
+.navbarMenuBotao {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.08);
+
+  box-shadow:
+    0 12px 26px rgba(95, 29, 53, 0.08);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.navbarSocial,
+.navbarMenuBotao {
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border-radius: 50%;
+}
+
+.navbarWhatsapp,
+.navbarFavoritos {
+  padding:
+    0 14px;
+}
+
+.navbarSocial svg,
+.navbarFavoritos svg,
+.navbarWhatsapp svg,
+.navbarMenuBotao svg {
+  font-size: 18px;
+}
+
+.navbarSocial:hover,
+.navbarWhatsapp:hover,
+.navbarFavoritos:hover,
+.navbarMenuBotao:hover,
+.navbarFavoritosAtivo {
+  transform:
+    translateY(-2px);
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 14px 30px rgba(140, 45, 78, 0.18);
+}
+
+.navbarMenuBotao {
+  display: none;
+}
+
+/* =========================================================
+   DRAWER
+========================================================= */
+
+.drawerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 990;
+
+  background:
+    rgba(95, 29, 53, 0.18);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease;
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.drawerOverlayAberto {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  z-index: 1000;
+
+  width: min(360px, 88vw);
+  height: 100vh;
+
+  padding:
+    22px;
+
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(237, 137, 151, 0.2),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #fffaf7,
+      #fff0f3
+    );
+
+  box-shadow:
+    -24px 0 60px rgba(95, 29, 53, 0.18);
+
+  transform:
+    translateX(105%);
+
+  transition:
+    transform 0.35s ease;
+
+  overflow-y: auto;
+}
+
+.drawerAberto {
+  transform:
+    translateX(0);
+}
+
+.drawerTopo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-bottom: 26px;
+}
+
+.drawerLogo {
+  padding:
+    9px 13px;
+
+  border-radius:
+    60% 40% 54% 46% / 48% 58% 42% 52%;
+
+  background:
+    radial-gradient(
+      circle at 26% 18%,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 240, 243, 0.88)
+    );
+}
+
+.drawerLogo .navbarLogoImagem {
+  width: 98px;
+  height: auto;
+  max-height: 68px;
+
+  object-fit: contain;
+
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+
+  transform:
+    scale(1.08);
+}
+
+.drawerFechar {
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.08);
+
+  box-shadow:
+    0 12px 26px rgba(95, 29, 53, 0.09);
+}
+
+.drawerFechar svg {
+  font-size: 20px;
+}
+
+.drawerLinks {
+  display: grid;
+
+  gap: 10px;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding:
+    14px 15px;
+
+  border-radius: 18px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.62);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.08);
+
+  font-size: 14px;
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.drawerLink svg {
+  font-size: 19px;
+}
+
+.drawerLink:hover,
+.drawerLinkAtivo {
+  transform:
+    translateX(-3px);
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 14px 28px rgba(140, 45, 78, 0.18);
+}
+
+.drawerContato {
+  display: grid;
+
+  gap: 10px;
+
+  margin-top: 24px;
+  padding-top: 20px;
+
+  border-top:
+    1px solid rgba(140, 45, 78, 0.1);
+}
+
+.drawerContato button,
+.drawerContato a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 46px;
+
+  padding:
+    12px 15px;
+
+  border-radius: 999px;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  font-size: 13px;
+  font-weight: 900;
+
+  box-shadow:
+    0 14px 30px rgba(140, 45, 78, 0.18);
+}
+
+.drawerContato a {
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  box-shadow:
+    0 12px 26px rgba(95, 29, 53, 0.08);
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1180px) {
+  .navbarLinks {
+    display: none;
+  }
+
+  .navbarSocial,
+  .navbarWhatsapp {
+    display: none;
+  }
+
+  .navbarMenuBotao {
+    display: inline-flex;
+  }
+
+  .navbarContainer {
+    gap: 14px;
+  }
+}
+
+.navbarLogo,
+.navbarRolada .navbarLogo {
+  width: 62px;
+  height: 62px;
+
+  padding: 0;
+
+  border-radius: 50%;
+}
+
+.navbarLogoImagem,
+.navbarRolada .navbarLogoImagem {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 50%;
+
+  transform: scale(1.08);
+}
+
+.drawerLogo {
+  width: 88px;
+  height: 88px;
+}
+
+.drawerLogo .navbarLogoImagem {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+@media (max-width: 430px) {
+  .navbarContainer {
+    gap: 8px;
+  }
+
+  .navbarLogo,
+  .navbarRolada .navbarLogo {
+    padding:
+      5px 7px;
+  }
+
+  .navbarLogoImagem,
+  .navbarRolada .navbarLogoImagem {
+    width: 68px;
+    max-height: 48px;
+  }
+
+  .drawerLogo .navbarLogoImagem {
+    width: 90px;
+    max-height: 62px;
+  }
+
+  .navbarFavoritos {
+    min-height: 38px;
+
+    padding:
+      0 11px;
+
+    font-size: 10px;
+  }
+
+  .navbarFavoritos svg {
+    font-size: 16px;
+  }
+
+  .navbarMenuBotao {
+    width: 38px;
+    height: 38px;
+  }
+
+  .drawer {
+    width: min(330px, 90vw);
+
+    padding:
+      20px;
+  }
+}

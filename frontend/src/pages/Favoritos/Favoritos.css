@@ -1,0 +1,746 @@
+.favoritosPagina {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff9f7 0%,
+      #fff1f3 48%,
+      #fff8ef 100%
+    );
+}
+
+/* =========================================================
+   ABERTURA
+========================================================= */
+
+.favoritosHero {
+  position: relative;
+
+  min-height: 470px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    150px 0 80px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 14% 20%,
+      rgba(237, 137, 151, 0.21),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 86% 28%,
+      rgba(133, 141, 58, 0.13),
+      transparent 25%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 250, 247, 0.97),
+      rgba(255, 239, 242, 0.88)
+    );
+}
+
+.favoritosHeroConteudo {
+  position: relative;
+  z-index: 3;
+
+  max-width: 800px;
+}
+
+.favoritosTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+  padding: 9px 17px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.12);
+
+  box-shadow:
+    0 10px 28px rgba(95, 29, 53, 0.09);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.favoritosHero h1 {
+  margin-bottom: 20px;
+
+  font-size:
+    clamp(48px, 7vw, 80px);
+
+  line-height: 0.95;
+}
+
+.favoritosHero h1 span {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--rosa-forte);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+.favoritosHero p {
+  max-width: 580px;
+
+  margin: 0 auto 25px;
+
+  font-size: 17px;
+}
+
+.favoritosQuantidade {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 11px 28px rgba(95, 29, 53, 0.09);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.favoritosQuantidade svg {
+  color: var(--rosa-forte);
+
+  fill: currentColor;
+}
+
+.favoritosQuantidade strong {
+  font-size: 17px;
+}
+
+/* =========================================================
+   DECORAÇÃO
+========================================================= */
+
+.favoritosDecoracao {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.favoritosForma {
+  position: absolute;
+
+  border-radius:
+    48% 52% 61% 39% / 55% 43% 57% 45%;
+
+  animation:
+    favoritosFlutuar 9s ease-in-out infinite;
+}
+
+.favoritosFormaUm {
+  width: 340px;
+  height: 340px;
+
+  left: -160px;
+  top: 80px;
+
+  background:
+    rgba(237, 137, 151, 0.18);
+}
+
+.favoritosFormaDois {
+  width: 260px;
+  height: 260px;
+
+  right: -100px;
+  bottom: -80px;
+
+  background:
+    rgba(133, 141, 58, 0.12);
+
+  animation-delay: -4s;
+}
+
+.favoritosCoracao {
+  position: absolute;
+
+  color:
+    rgba(217, 92, 120, 0.23);
+
+  filter:
+    drop-shadow(
+      0 10px 20px rgba(140, 45, 78, 0.12)
+    );
+
+  animation:
+    favoritosCoracaoFlutuar 6s
+    ease-in-out infinite;
+}
+
+.favoritosCoracaoUm {
+  left: 11%;
+  top: 38%;
+
+  font-size: 58px;
+
+  transform: rotate(-14deg);
+}
+
+.favoritosCoracaoDois {
+  right: 14%;
+  top: 30%;
+
+  font-size: 42px;
+
+  animation-delay: -3s;
+}
+
+.favoritosLinhaCostura {
+  position: absolute;
+
+  width: 240px;
+  height: 100px;
+
+  left: 29%;
+  top: 25%;
+
+  border-top:
+    2px dashed rgba(140, 45, 78, 0.18);
+
+  border-radius: 50%;
+
+  transform: rotate(10deg);
+}
+
+.favoritosBolinha {
+  position: absolute;
+
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: var(--rosa-principal);
+
+  animation:
+    favoritosPulso 4s ease-in-out infinite;
+}
+
+.favoritosBolinhaUm {
+  left: 24%;
+  bottom: 18%;
+}
+
+.favoritosBolinhaDois {
+  right: 27%;
+  top: 36%;
+
+  background: var(--verde-oliva);
+
+  animation-delay: -2s;
+}
+
+.favoritosBolinhaTres {
+  right: 9%;
+  bottom: 16%;
+
+  background: var(--coral);
+
+  animation-delay: -3s;
+}
+
+/* =========================================================
+   LISTAGEM
+========================================================= */
+
+.favoritosConteudo {
+  position: relative;
+
+  min-height: 500px;
+
+  background:
+    radial-gradient(
+      circle at 5% 12%,
+      rgba(237, 137, 151, 0.13),
+      transparent 23%
+    ),
+    radial-gradient(
+      circle at 94% 85%,
+      rgba(133, 141, 58, 0.1),
+      transparent 25%
+    );
+}
+
+.favoritosCabecalho {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 38px;
+}
+
+.favoritosCabecalho div > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--rosa-forte);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.favoritosCabecalho h2 {
+  font-size:
+    clamp(34px, 4vw, 48px);
+}
+
+.favoritosVerProdutos {
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.12);
+
+  box-shadow:
+    var(--sombra-suave);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.favoritosVerProdutos:hover {
+  transform: translateY(-3px);
+
+  color: var(--branco);
+
+  background: var(--vinho);
+}
+
+.favoritosGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+/* =========================================================
+   LISTA VAZIA
+========================================================= */
+
+.favoritosVazio {
+  position: relative;
+
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  padding: 58px 40px;
+
+  text-align: center;
+
+  border-radius: 36px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(237, 137, 151, 0.19),
+      transparent 28%
+    ),
+    rgba(255, 255, 255, 0.72);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 24px 60px rgba(95, 29, 53, 0.12);
+
+  backdrop-filter: blur(15px);
+
+  overflow: hidden;
+}
+
+.favoritosVazioVisual {
+  position: relative;
+
+  width: 130px;
+  height: 110px;
+
+  margin: 0 auto 20px;
+}
+
+.favoritosVazioCirculo {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 88px;
+  height: 88px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    45% 55% 57% 43% / 53% 44% 56% 47%;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 18px 38px rgba(140, 45, 78, 0.27);
+
+  transform:
+    translate(-50%, -50%);
+}
+
+.favoritosVazioCirculo svg {
+  font-size: 34px;
+}
+
+.favoritosVazioCoracao {
+  position: absolute;
+
+  color:
+    rgba(217, 92, 120, 0.32);
+
+  animation:
+    favoritosCoracaoFlutuar 5s
+    ease-in-out infinite;
+}
+
+.favoritosVazioCoracaoUm {
+  top: 2px;
+  right: 4px;
+
+  font-size: 27px;
+}
+
+.favoritosVazioCoracaoDois {
+  left: 2px;
+  bottom: 4px;
+
+  font-size: 22px;
+
+  animation-delay: -2s;
+}
+
+.favoritosVazioTag {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--rosa-forte);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.favoritosVazio h2 {
+  max-width: 500px;
+
+  margin: 0 auto 17px;
+
+  font-size:
+    clamp(30px, 5vw, 44px);
+}
+
+.favoritosVazio p {
+  max-width: 520px;
+
+  margin: 0 auto 28px;
+
+  font-size: 15px;
+}
+
+.favoritosVazioBotao {
+  width: auto;
+}
+
+/* =========================================================
+   CARREGAMENTO
+========================================================= */
+
+.favoritoSkeleton {
+  padding: 11px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.7);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.08);
+
+  box-shadow: var(--sombra-suave);
+}
+
+.favoritoSkeletonImagem {
+  height: 310px;
+
+  border-radius: 23px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(251, 213, 217, 0.55),
+      rgba(255, 255, 255, 0.9),
+      rgba(251, 213, 217, 0.55)
+    );
+
+  background-size: 220% 100%;
+
+  animation:
+    favoritoSkeletonMovimento 1.5s
+    infinite;
+}
+
+.favoritoSkeletonTexto {
+  padding: 22px 12px 14px;
+}
+
+.favoritoSkeletonTexto span,
+.favoritoSkeletonTexto strong,
+.favoritoSkeletonTexto p {
+  display: block;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(251, 213, 217, 0.55),
+      rgba(255, 255, 255, 0.9),
+      rgba(251, 213, 217, 0.55)
+    );
+
+  background-size: 220% 100%;
+
+  animation:
+    favoritoSkeletonMovimento 1.5s
+    infinite;
+}
+
+.favoritoSkeletonTexto span {
+  width: 40%;
+  height: 10px;
+
+  margin-bottom: 14px;
+}
+
+.favoritoSkeletonTexto strong {
+  width: 72%;
+  height: 23px;
+
+  margin-bottom: 17px;
+}
+
+.favoritoSkeletonTexto p {
+  width: 100%;
+  height: 9px;
+
+  margin-bottom: 9px;
+}
+
+.favoritoSkeletonTexto p:last-child {
+  width: 74%;
+}
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes favoritosFlutuar {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate3d(18px, -14px, 0)
+      rotate(7deg);
+  }
+}
+
+@keyframes favoritosCoracaoFlutuar {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+@keyframes favoritosPulso {
+  0%,
+  100% {
+    opacity: 0.6;
+    scale: 1;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.25;
+  }
+}
+
+@keyframes favoritoSkeletonMovimento {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1000px) {
+  .favoritosGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .favoritosHero {
+    min-height: 430px;
+
+    padding:
+      135px 0 65px;
+  }
+
+  .favoritosHeroConteudo {
+    width: 88%;
+  }
+
+  .favoritosHero h1 {
+    font-size:
+      clamp(44px, 13vw, 62px);
+  }
+
+  .favoritosCabecalho {
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .favoritosVerProdutos {
+    width: min(100%, 390px);
+  }
+
+  .favoritosGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .favoritosVazio {
+    width: min(100%, 420px);
+
+    padding: 48px 24px;
+  }
+
+  .favoritosVazioBotao {
+    width: 100%;
+  }
+
+  .favoritosCoracaoUm {
+    left: -10px;
+  }
+
+  .favoritosCoracaoDois {
+    right: 3%;
+  }
+
+  .favoritosLinhaCostura {
+    left: -80px;
+  }
+
+  .favoritoSkeleton {
+    width: min(100%, 390px);
+
+    margin: 0 auto;
+  }
+
+  .favoritoSkeletonImagem {
+    height: 290px;
+  }
+}

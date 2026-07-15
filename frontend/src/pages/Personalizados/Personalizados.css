@@ -1,0 +1,1530 @@
+.personalizadosPagina {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff9f7 0%,
+      #fff1f3 48%,
+      #fff8ef 100%
+    );
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.personalizadosHero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    140px 0 90px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(237, 137, 151, 0.23),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 24%,
+      rgba(133, 141, 58, 0.14),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 76% 84%,
+      rgba(238, 109, 114, 0.13),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #fffaf7,
+      #fff0f3
+    );
+}
+
+.personalizadosHeroContainer {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(360px, 0.95fr);
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.personalizadosHeroTexto {
+  max-width: 670px;
+}
+
+.personalizadosTag {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+  padding: 9px 17px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 10px 28px rgba(95, 29, 53, 0.09);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.personalizadosHero h1 {
+  margin-bottom: 24px;
+
+  font-size:
+    clamp(52px, 7.8vw, 92px);
+
+  line-height: 0.94;
+}
+
+.personalizadosHero h1 span {
+  display: block;
+
+  margin-top: 10px;
+
+  color: var(--rosa-forte);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: 0.78em;
+  font-weight: 400;
+}
+
+.personalizadosHero p {
+  max-width: 560px;
+
+  margin-bottom: 34px;
+
+  color: var(--texto-suave);
+
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.personalizadosHeroBotoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.personalizadosHeroVisual {
+  position: relative;
+
+  min-height: 550px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personalizadosQuadroPrincipal {
+  position: relative;
+
+  width: min(430px, 100%);
+  aspect-ratio: 0.86 / 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 34px;
+
+  border-radius:
+    45% 55% 52% 48% / 42% 48% 52% 58%;
+
+  background:
+    radial-gradient(
+      circle at 35% 24%,
+      rgba(255, 255, 255, 0.9),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      var(--rosa-claro),
+      var(--creme)
+    );
+
+  border:
+    2px dashed rgba(140, 45, 78, 0.13);
+
+  box-shadow:
+    0 30px 70px rgba(95, 29, 53, 0.16);
+
+  animation:
+    personalizadosFlutuar 7s ease-in-out infinite;
+}
+
+.personalizadosSelo {
+  position: absolute;
+
+  right: -18px;
+  top: 54px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 16px;
+
+  border-radius: 999px;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 15px 30px rgba(140, 45, 78, 0.25);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.personalizadosSelo svg {
+  fill: currentColor;
+}
+
+.personalizadosFlorGrande {
+  position: relative;
+
+  width: 145px;
+  height: 145px;
+
+  margin-bottom: 26px;
+
+  animation:
+    personalizadosGirar 22s linear infinite;
+}
+
+.personalizadosFlorGrande span {
+  position: absolute;
+
+  left: 52px;
+  top: 4px;
+
+  width: 41px;
+  height: 70px;
+
+  border-radius:
+    52% 52% 48% 48%;
+
+  background:
+    linear-gradient(
+      var(--rosa-principal),
+      var(--rosa-forte)
+    );
+
+  transform-origin:
+    20px 69px;
+}
+
+.personalizadosFlorGrande span:nth-child(2) {
+  transform: rotate(72deg);
+}
+
+.personalizadosFlorGrande span:nth-child(3) {
+  transform: rotate(144deg);
+}
+
+.personalizadosFlorGrande span:nth-child(4) {
+  transform: rotate(216deg);
+}
+
+.personalizadosFlorGrande span:nth-child(5) {
+  transform: rotate(288deg);
+}
+
+.personalizadosFlorGrande i {
+  position: absolute;
+
+  left: 52px;
+  top: 52px;
+
+  width: 41px;
+  height: 41px;
+
+  border-radius: 50%;
+
+  background: var(--creme);
+
+  border:
+    2px dashed var(--vinho);
+}
+
+.personalizadosQuadroPrincipal strong {
+  color: var(--vinho);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 42px;
+  line-height: 1.08;
+
+  text-align: center;
+}
+
+.personalizadosQuadroPrincipal small {
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--rosa-forte);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: 39px;
+  font-weight: 400;
+}
+
+.personalizadosMiniCard {
+  position: absolute;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 13px 16px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 13px 30px rgba(95, 29, 53, 0.12);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  animation:
+    personalizadosFlutuar 6s ease-in-out infinite;
+}
+
+.personalizadosMiniCard svg {
+  color: var(--rosa-forte);
+
+  font-size: 18px;
+}
+
+.personalizadosMiniCardUm {
+  left: 12px;
+  bottom: 115px;
+}
+
+.personalizadosMiniCardDois {
+  right: 10px;
+  bottom: 48px;
+
+  animation-delay: -3s;
+}
+
+/* =========================================================
+   DECORAÇÕES HERO
+========================================================= */
+
+.personalizadosHeroDecoracao {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.personalizadosForma {
+  position: absolute;
+
+  border-radius:
+    55% 45% 63% 37% / 45% 54% 46% 55%;
+
+  animation:
+    personalizadosFlutuar 9s ease-in-out infinite;
+}
+
+.personalizadosFormaUm {
+  width: 360px;
+  height: 360px;
+
+  left: -130px;
+  top: 120px;
+
+  background:
+    rgba(237, 137, 151, 0.18);
+}
+
+.personalizadosFormaDois {
+  width: 260px;
+  height: 260px;
+
+  right: -80px;
+  top: 150px;
+
+  background:
+    rgba(133, 141, 58, 0.12);
+
+  animation-delay: -3s;
+}
+
+.personalizadosFormaTres {
+  width: 210px;
+  height: 210px;
+
+  left: 48%;
+  bottom: -90px;
+
+  background:
+    rgba(238, 109, 114, 0.11);
+
+  animation-delay: -5s;
+}
+
+.personalizadosIcone {
+  position: absolute;
+
+  color:
+    rgba(140, 45, 78, 0.16);
+
+  filter:
+    drop-shadow(
+      0 8px 12px rgba(140, 45, 78, 0.07)
+    );
+
+  animation:
+    personalizadosFlutuar 6s ease-in-out infinite;
+}
+
+.personalizadosIconeUm {
+  left: 17%;
+  top: 31%;
+
+  font-size: 46px;
+
+  transform: rotate(-18deg);
+}
+
+.personalizadosIconeDois {
+  right: 27%;
+  top: 28%;
+
+  font-size: 38px;
+
+  animation-delay: -2s;
+}
+
+.personalizadosIconeTres {
+  left: 45%;
+  bottom: 21%;
+
+  font-size: 36px;
+
+  animation-delay: -4s;
+}
+
+.personalizadosLinha {
+  position: absolute;
+
+  border-top:
+    2px dashed rgba(140, 45, 78, 0.16);
+
+  border-radius: 50%;
+}
+
+.personalizadosLinhaUm {
+  width: 250px;
+  height: 80px;
+
+  left: 24%;
+  top: 19%;
+
+  transform: rotate(12deg);
+}
+
+.personalizadosLinhaDois {
+  width: 220px;
+  height: 80px;
+
+  right: 8%;
+  bottom: 22%;
+
+  transform: rotate(-12deg);
+}
+
+.personalizadosBolinha {
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--rosa-principal);
+
+  animation:
+    personalizadosPulso 4s ease-in-out infinite;
+}
+
+.personalizadosBolinhaUm {
+  left: 20%;
+  bottom: 27%;
+}
+
+.personalizadosBolinhaDois {
+  right: 22%;
+  top: 46%;
+
+  background: var(--verde-oliva);
+
+  animation-delay: -1s;
+}
+
+.personalizadosBolinhaTres {
+  left: 52%;
+  top: 16%;
+
+  background: var(--coral);
+
+  animation-delay: -2s;
+}
+
+/* =========================================================
+   TIPOS
+========================================================= */
+
+.personalizadosTipos {
+  background:
+    linear-gradient(
+      180deg,
+      #fff1f3,
+      #fffaf7
+    );
+}
+
+.personalizadosTiposGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.personalizadosTipoCard {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 30px 24px;
+
+  border-radius: 30px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(237, 137, 151, 0.16),
+      transparent 32%
+    ),
+    rgba(255, 255, 255, 0.72);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 20px 45px rgba(95, 29, 53, 0.1);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.personalizadosTipoCard:hover {
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 28px 60px rgba(95, 29, 53, 0.15);
+}
+
+.personalizadosTipoIcone {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius:
+    42% 58% 58% 42% / 52% 42% 58% 48%;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 12px 28px rgba(140, 45, 78, 0.23);
+}
+
+.personalizadosTipoIcone svg {
+  font-size: 27px;
+}
+
+.personalizadosTipoCard h3 {
+  margin-bottom: 12px;
+
+  color: var(--vinho-escuro);
+
+  font-size: 25px;
+}
+
+.personalizadosTipoCard p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.personalizadosTipoDetalhe {
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  right: -30px;
+  bottom: -30px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(251, 213, 217, 0.4);
+}
+
+/* =========================================================
+   DETALHES
+========================================================= */
+
+.personalizadosDetalhes {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(237, 137, 151, 0.16),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(133, 141, 58, 0.12),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #fffaf7,
+      #fff0f3
+    );
+
+  overflow: hidden;
+}
+
+.personalizadosDetalhesFundo {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.personalizadosDetalhesFundo span {
+  position: absolute;
+
+  border-radius:
+    50% 50% 64% 36% / 55% 44% 56% 45%;
+}
+
+.personalizadosDetalhesFundo span:nth-child(1) {
+  width: 300px;
+  height: 300px;
+
+  left: -110px;
+  bottom: 70px;
+
+  background:
+    rgba(237, 137, 151, 0.15);
+}
+
+.personalizadosDetalhesFundo span:nth-child(2) {
+  width: 240px;
+  height: 240px;
+
+  right: -90px;
+  top: 80px;
+
+  background:
+    rgba(133, 141, 58, 0.11);
+}
+
+.personalizadosDetalhesFundo div {
+  position: absolute;
+
+  left: 45%;
+  top: 105px;
+
+  width: 260px;
+  height: 90px;
+
+  border-top:
+    2px dashed rgba(140, 45, 78, 0.15);
+
+  border-radius: 50%;
+
+  transform: rotate(9deg);
+}
+
+.personalizadosDetalhesContainer {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(0, 0.95fr);
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.personalizadosDetalhesTexto p {
+  margin-bottom: 25px;
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.personalizadosChecklist {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+.personalizadosChecklistItem {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px 14px;
+
+  border-radius: 17px;
+
+  color: var(--texto);
+
+  background:
+    rgba(255, 255, 255, 0.68);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.08);
+
+  box-shadow:
+    0 10px 24px rgba(95, 29, 53, 0.06);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.personalizadosChecklistItem svg {
+  flex-shrink: 0;
+
+  color: var(--rosa-forte);
+
+  font-size: 19px;
+}
+
+.personalizadosDetalhesVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personalizadosBlocoCriativo {
+  position: relative;
+
+  width: min(420px, 100%);
+
+  padding: 24px;
+
+  border-radius: 34px;
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 28px 70px rgba(95, 29, 53, 0.15);
+
+  overflow: hidden;
+}
+
+.personalizadosBlocoTopo {
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 24px;
+}
+
+.personalizadosBlocoTopo span {
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: var(--rosa-principal);
+}
+
+.personalizadosBlocoTopo span:nth-child(2) {
+  background: var(--verde-oliva);
+}
+
+.personalizadosBlocoTopo span:nth-child(3) {
+  background: var(--coral);
+}
+
+.personalizadosBlocoConteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 42px 22px;
+
+  border-radius: 26px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 35% 20%,
+      rgba(255, 255, 255, 0.92),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      var(--rosa-claro),
+      var(--creme)
+    );
+
+  border:
+    2px dashed rgba(140, 45, 78, 0.13);
+}
+
+.personalizadosBlocoConteudo svg {
+  margin-bottom: 18px;
+
+  color: var(--vinho);
+
+  font-size: 52px;
+}
+
+.personalizadosBlocoConteudo strong {
+  margin-bottom: 10px;
+
+  color: var(--vinho);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 31px;
+  line-height: 1.12;
+}
+
+.personalizadosBlocoConteudo p {
+  max-width: 280px;
+
+  margin: 0 auto;
+
+  font-size: 13px;
+}
+
+.personalizadosBlocoRodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.personalizadosBlocoRodape span {
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(251, 213, 217, 0.62);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.personalizadosComoFunciona {
+  background:
+    linear-gradient(
+      180deg,
+      #fff0f3,
+      #fff9f4
+    );
+}
+
+.personalizadosEtapas {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.personalizadosEtapaCard {
+  position: relative;
+
+  padding: 30px 22px;
+
+  border-radius: 28px;
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 18px 42px rgba(95, 29, 53, 0.09);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.personalizadosEtapaCard:hover {
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    0 24px 55px rgba(95, 29, 53, 0.14);
+}
+
+.personalizadosEtapaNumero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 18px;
+
+  border-radius:
+    42% 58% 58% 42% / 52% 42% 58% 48%;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 12px 28px rgba(140, 45, 78, 0.22);
+
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.personalizadosEtapaCard h3 {
+  margin-bottom: 10px;
+
+  color: var(--vinho-escuro);
+
+  font-size: 22px;
+}
+
+.personalizadosEtapaCard p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   IDEIAS
+========================================================= */
+
+.personalizadosIdeias {
+  background:
+    radial-gradient(
+      circle at 8% 18%,
+      rgba(237, 137, 151, 0.14),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at 92% 80%,
+      rgba(133, 141, 58, 0.1),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #fff9f4,
+      #fff1f3
+    );
+}
+
+.personalizadosIdeiasContainer {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(0, 1.2fr);
+
+  align-items: center;
+
+  gap: 50px;
+}
+
+.personalizadosIdeiasTexto p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.personalizadosIdeiasLista {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.personalizadosIdeiasLista span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.74);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 10px 24px rgba(95, 29, 53, 0.07);
+
+  font-size: 13px;
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.personalizadosIdeiasLista span:hover {
+  transform:
+    translateY(-3px);
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+}
+
+/* =========================================================
+   CHAMADA FINAL
+========================================================= */
+
+.personalizadosChamadaFinal {
+  padding:
+    70px 0 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fff1f3,
+      #fff8ef
+    );
+}
+
+.personalizadosChamadaCard {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 48px;
+
+  border-radius: 38px;
+
+  background:
+    radial-gradient(
+      circle at 92% 15%,
+      rgba(237, 137, 151, 0.2),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.86),
+      rgba(255, 236, 239, 0.82)
+    );
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 25px 65px rgba(95, 29, 53, 0.13);
+
+  overflow: hidden;
+}
+
+.personalizadosChamadaDecoracao {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+}
+
+.personalizadosChamadaDecoracao span {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background:
+    rgba(237, 137, 151, 0.15);
+}
+
+.personalizadosChamadaDecoracao span:nth-child(1) {
+  width: 150px;
+  height: 150px;
+
+  right: -45px;
+  top: -45px;
+}
+
+.personalizadosChamadaDecoracao span:nth-child(2) {
+  width: 105px;
+  height: 105px;
+
+  left: 36%;
+  bottom: -40px;
+
+  background:
+    rgba(133, 141, 58, 0.1);
+}
+
+.personalizadosChamadaDecoracao span:nth-child(3) {
+  width: 60px;
+  height: 60px;
+
+  left: 35px;
+  top: 35px;
+
+  background:
+    rgba(238, 109, 114, 0.12);
+}
+
+.personalizadosChamadaTexto {
+  position: relative;
+  z-index: 2;
+}
+
+.personalizadosChamadaTexto h2 {
+  max-width: 720px;
+
+  margin-bottom: 15px;
+
+  font-size:
+    clamp(34px, 5vw, 56px);
+
+  line-height: 1.05;
+}
+
+.personalizadosChamadaTexto p {
+  max-width: 600px;
+
+  font-size: 15px;
+}
+
+.personalizadosChamadaCard .btnPrimario {
+  position: relative;
+  z-index: 2;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes personalizadosFlutuar {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform:
+      translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes personalizadosGirar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes personalizadosPulso {
+  0%,
+  100% {
+    opacity: 0.55;
+    scale: 1;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.25;
+  }
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1100px) {
+  .personalizadosHeroContainer,
+  .personalizadosDetalhesContainer,
+  .personalizadosIdeiasContainer {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .personalizadosHeroTexto,
+  .personalizadosDetalhesTexto,
+  .personalizadosIdeiasTexto {
+    max-width: 780px;
+
+    text-align: center;
+
+    margin: 0 auto;
+  }
+
+  .personalizadosHero p,
+  .personalizadosIdeiasTexto p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .personalizadosHeroBotoes {
+    justify-content: center;
+  }
+
+  .personalizadosHeroVisual {
+    min-height: 460px;
+  }
+
+  .personalizadosChecklist {
+    max-width: 740px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .personalizadosDetalhesTexto .btnPrimario {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .personalizadosIdeiasLista {
+    justify-content: center;
+  }
+
+  .personalizadosTiposGrid,
+  .personalizadosEtapas {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .personalizadosChamadaCard {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+  .personalizadosChamadaTexto h2,
+  .personalizadosChamadaTexto p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .personalizadosChamadaCard .btnPrimario {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .personalizadosHero {
+    min-height: auto;
+
+    padding:
+      130px 0 70px;
+  }
+
+  .personalizadosHero h1 {
+    font-size:
+      clamp(44px, 13vw, 66px);
+  }
+
+  .personalizadosHero p {
+    font-size: 15px;
+  }
+
+  .personalizadosHeroVisual {
+    min-height: 410px;
+  }
+
+  .personalizadosQuadroPrincipal {
+    width: min(340px, 88vw);
+  }
+
+  .personalizadosFlorGrande {
+    width: 120px;
+    height: 120px;
+  }
+
+  .personalizadosFlorGrande span {
+    left: 43px;
+    top: 3px;
+
+    width: 34px;
+    height: 58px;
+
+    transform-origin:
+      17px 57px;
+  }
+
+  .personalizadosFlorGrande i {
+    left: 43px;
+    top: 43px;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .personalizadosQuadroPrincipal strong {
+    font-size: 34px;
+  }
+
+  .personalizadosQuadroPrincipal small {
+    font-size: 32px;
+  }
+
+  .personalizadosChecklist {
+    grid-template-columns: 1fr;
+  }
+
+  .personalizadosTiposGrid,
+  .personalizadosEtapas {
+    grid-template-columns: 1fr;
+
+    max-width: 430px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .personalizadosTipoCard {
+    min-height: auto;
+
+    text-align: center;
+  }
+
+  .personalizadosTipoIcone {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .personalizadosChamadaCard {
+    padding: 38px 24px;
+
+    border-radius: 30px;
+  }
+
+  .personalizadosChamadaCard .btnPrimario,
+  .personalizadosHeroBotoes .btnPrimario,
+  .personalizadosHeroBotoes .btnSecundario {
+    width: 100%;
+  }
+
+  .personalizadosHeroBotoes {
+    width: 100%;
+  }
+
+  .personalizadosIconeUm,
+  .personalizadosLinhaUm {
+    opacity: 0.22;
+  }
+
+  .personalizadosIconeDois,
+  .personalizadosLinhaDois {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .personalizadosHero {
+    padding:
+      118px 0 60px;
+  }
+
+  .personalizadosTag,
+  .secaoTag {
+    font-size: 10px;
+  }
+
+  .personalizadosHero h1 {
+    font-size:
+      clamp(40px, 14vw, 56px);
+  }
+
+  .personalizadosQuadroPrincipal {
+    width: min(290px, 88vw);
+  }
+
+  .personalizadosSelo {
+    right: -2px;
+    top: 34px;
+
+    padding: 9px 12px;
+
+    font-size: 10px;
+  }
+
+  .personalizadosMiniCard {
+    padding: 10px 12px;
+
+    font-size: 10px;
+  }
+
+  .personalizadosMiniCardUm {
+    left: 0;
+    bottom: 80px;
+  }
+
+  .personalizadosMiniCardDois {
+    right: 0;
+    bottom: 30px;
+  }
+
+  .personalizadosBlocoCriativo {
+    padding: 18px;
+
+    border-radius: 28px;
+  }
+
+  .personalizadosBlocoConteudo {
+    padding: 34px 18px;
+  }
+
+  .personalizadosBlocoConteudo strong {
+    font-size: 26px;
+  }
+
+  .personalizadosChamadaTexto h2 {
+    font-size: 31px;
+  }
+}

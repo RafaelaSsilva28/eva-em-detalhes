@@ -1,0 +1,963 @@
+.adminProdutoNovoPagina {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(237, 137, 151, 0.18), transparent 28%),
+    radial-gradient(circle at 92% 18%, rgba(133, 141, 58, 0.1), transparent 26%),
+    linear-gradient(135deg, #fff9f7 0%, #fff1f3 50%, #fff8ef 100%);
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.adminProdutoNovoHero {
+  position: relative;
+  padding: 46px 42px 34px;
+  overflow: hidden;
+}
+
+.adminProdutoNovoDecoracao {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.adminProdutoNovoForma {
+  position: absolute;
+  border-radius: 55% 45% 63% 37% / 45% 54% 46% 55%;
+}
+
+.adminProdutoNovoFormaUm {
+  width: 330px;
+  height: 330px;
+  right: -120px;
+  top: -130px;
+  background: rgba(237, 137, 151, 0.16);
+}
+
+.adminProdutoNovoFormaDois {
+  width: 230px;
+  height: 230px;
+  left: 42%;
+  bottom: -135px;
+  background: rgba(133, 141, 58, 0.1);
+}
+
+.adminProdutoNovoTopo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.adminProdutoNovoVoltar {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+  box-shadow: 0 10px 24px rgba(95, 29, 53, 0.07);
+  font-size: 12px;
+  font-weight: 900;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.adminProdutoNovoVoltar:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.adminProdutoNovoTag,
+.adminProdutoNovoFormTag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--rosa-forte);
+  background: rgba(251, 213, 217, 0.52);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.adminProdutoNovoTopo h1 {
+  margin-bottom: 10px;
+  color: var(--vinho-escuro);
+  font-size: clamp(40px, 6vw, 70px);
+  line-height: 0.95;
+}
+
+.adminProdutoNovoTopo h1 span {
+  display: block;
+  color: var(--rosa-forte);
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+}
+
+.adminProdutoNovoTopo p {
+  max-width: 670px;
+  color: var(--texto-suave);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.adminProdutoNovoTopoAcoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminProdutoNovoBotaoTopo,
+.adminProdutoNovoBotaoSecundario {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.adminProdutoNovoBotaoTopo {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+  box-shadow: 0 14px 30px rgba(140, 45, 78, 0.22);
+}
+
+.adminProdutoNovoBotaoSecundario {
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+}
+
+.adminProdutoNovoBotaoTopo:hover,
+.adminProdutoNovoBotaoSecundario:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   PAINEL DE ÚLTIMOS PRODUTOS
+========================================================= */
+
+.adminProdutoNovoPainel {
+  position: relative;
+  z-index: 2;
+  margin: 0 42px 58px;
+  padding: 26px;
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(140, 45, 78, 0.1);
+  box-shadow: 0 24px 60px rgba(95, 29, 53, 0.1);
+}
+
+.adminProdutoNovoPainelTopo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.adminProdutoNovoPainelTopo span {
+  display: inline-flex;
+  margin-bottom: 6px;
+  color: var(--rosa-forte);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.adminProdutoNovoPainelTopo h2 {
+  color: var(--vinho-escuro);
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1;
+}
+
+.adminProdutoNovoPainelTopo a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(251, 213, 217, 0.52);
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.adminProdutoNovoPainelTopo a:hover {
+  transform: translateY(-2px);
+  background: rgba(251, 213, 217, 0.82);
+}
+
+/* LISTA */
+
+.adminProdutoNovoLista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.adminProdutoNovoCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 15px;
+  padding: 14px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(237, 137, 151, 0.12), transparent 32%),
+    rgba(255, 250, 247, 0.88);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+  box-shadow: 0 18px 38px rgba(95, 29, 53, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.adminProdutoNovoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 52px rgba(95, 29, 53, 0.13);
+}
+
+.adminProdutoNovoCardImagem {
+  width: 112px;
+  height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  overflow: hidden;
+  color: var(--rosa-forte);
+  background: linear-gradient(145deg, var(--rosa-claro), var(--creme));
+}
+
+.adminProdutoNovoCardImagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.adminProdutoNovoCardImagem svg {
+  font-size: 36px;
+}
+
+.adminProdutoNovoCardInfo {
+  min-width: 0;
+  padding-right: 4px;
+}
+
+.adminProdutoNovoCardInfo > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: var(--rosa-forte);
+  background: rgba(251, 213, 217, 0.55);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.adminProdutoNovoCardInfo h3 {
+  margin-bottom: 6px;
+  color: var(--vinho-escuro);
+  font-size: 19px;
+  line-height: 1.1;
+}
+
+.adminProdutoNovoCardInfo p {
+  min-height: 38px;
+  margin-bottom: 12px;
+  color: var(--texto-suave);
+  font-size: 12px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.adminProdutoNovoCardMeta {
+  display: grid;
+  gap: 6px;
+}
+
+.adminProdutoNovoCardMeta strong {
+  color: var(--vinho);
+  font-size: 15px;
+}
+
+.adminProdutoNovoCardMeta small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--texto-suave);
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.adminProdutoNovoCardBadges {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding-top: 2px;
+}
+
+.adminProdutoNovoCardBadges span {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(251, 213, 217, 0.55);
+  font-size: 9px;
+  font-weight: 900;
+}
+
+/* SKELETON */
+
+.adminProdutoNovoSkeleton {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.adminProdutoNovoSkeleton span {
+  min-height: 190px;
+  border-radius: 26px;
+  background: linear-gradient(
+    90deg,
+    rgba(251, 213, 217, 0.55),
+    rgba(255, 255, 255, 0.92),
+    rgba(251, 213, 217, 0.55)
+  );
+  background-size: 220% 100%;
+  animation: adminProdutoNovoSkeleton 1.5s infinite;
+}
+
+/* VAZIO */
+
+.adminProdutoNovoVazio {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-align: center;
+  padding: 40px;
+  border-radius: 28px;
+  background: rgba(255, 250, 247, 0.72);
+  border: 1px dashed rgba(140, 45, 78, 0.2);
+}
+
+.adminProdutoNovoVazio svg {
+  color: var(--rosa-forte);
+  font-size: 48px;
+}
+
+.adminProdutoNovoVazio h2 {
+  color: var(--vinho-escuro);
+}
+
+.adminProdutoNovoVazio p {
+  max-width: 420px;
+  color: var(--texto-suave);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.adminProdutoNovoModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(95, 29, 53, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.adminProdutoNovoModal {
+  position: relative;
+  width: min(1180px, 96vw);
+  height: 92vh;
+  max-height: 92vh;
+  display: grid;
+  grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.05fr);
+  overflow: hidden;
+  border-radius: 34px;
+  background: #fffaf7;
+  box-shadow: 0 34px 90px rgba(95, 29, 53, 0.28);
+}
+
+.adminProdutoNovoModalFechar {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  z-index: 12;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--vinho);
+  background: rgba(251, 213, 217, 0.78);
+  box-shadow: 0 10px 22px rgba(95, 29, 53, 0.12);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.adminProdutoNovoModalFechar:hover {
+  transform: scale(1.08);
+  background: rgba(251, 213, 217, 0.95);
+}
+
+/* GALERIA DO MODAL */
+
+.adminProdutoNovoGaleria {
+  height: 100%;
+  min-height: 0;
+  padding: 30px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.72), transparent 32%),
+    linear-gradient(145deg, #fbd5d9, #fff2f4 48%, #fff8ec);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.adminProdutoNovoGaleria::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.adminProdutoNovoImagemPrincipal {
+  position: relative;
+  height: 440px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--rosa-claro), var(--creme));
+  box-shadow: 0 22px 48px rgba(95, 29, 53, 0.16);
+}
+
+.adminProdutoNovoImagemPrincipal img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.adminProdutoNovoSemImagem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-align: center;
+  padding: 28px;
+  color: var(--vinho);
+}
+
+.adminProdutoNovoSemImagem svg {
+  font-size: 50px;
+}
+
+.adminProdutoNovoSemImagem strong {
+  font-size: 20px;
+}
+
+.adminProdutoNovoSemImagem span {
+  max-width: 270px;
+  color: var(--texto-suave);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.adminProdutoNovoSelo {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+  box-shadow: 0 12px 28px rgba(95, 29, 53, 0.2);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.adminProdutoNovoMiniaturas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+  padding-bottom: 34px;
+}
+
+.adminProdutoNovoMiniatura,
+.adminProdutoNovoUpload {
+  position: relative;
+  height: 116px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid transparent;
+  box-shadow: 0 12px 24px rgba(95, 29, 53, 0.1);
+}
+
+.adminProdutoNovoMiniaturaAtiva {
+  border-color: var(--rosa-forte);
+  box-shadow:
+    0 0 0 4px rgba(237, 137, 151, 0.18),
+    0 14px 30px rgba(95, 29, 53, 0.16);
+}
+
+.adminProdutoNovoMiniatura img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.adminProdutoNovoPrincipal {
+  position: absolute;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  min-height: 27px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 7px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 9px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(95, 29, 53, 0.12);
+}
+
+.adminProdutoNovoMiniaturaAtiva .adminProdutoNovoPrincipal {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+}
+
+.adminProdutoNovoRemover {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  width: 27px;
+  height: 27px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #9d243d;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 18px rgba(95, 29, 53, 0.14);
+}
+
+.adminProdutoNovoUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--vinho);
+  border: 2px dashed rgba(140, 45, 78, 0.22);
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.adminProdutoNovoUpload:hover {
+  transform: translateY(-3px);
+  border-color: rgba(217, 92, 120, 0.45);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.adminProdutoNovoUpload svg {
+  font-size: 25px;
+  color: var(--rosa-forte);
+}
+
+.adminProdutoNovoUpload span {
+  font-size: 10px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.adminProdutoNovoUpload input {
+  display: none;
+}
+
+/* ÁREA DO FORMULÁRIO */
+
+.adminProdutoNovoFormArea {
+  height: 100%;
+  max-height: 92vh;
+  min-height: 0;
+  padding: 42px 42px 34px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  background:
+    radial-gradient(circle at 92% 7%, rgba(237, 137, 151, 0.14), transparent 28%),
+    #fffaf7;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 92, 120, 0.42) transparent;
+}
+
+.adminProdutoNovoFormArea::-webkit-scrollbar {
+  width: 7px;
+}
+
+.adminProdutoNovoFormArea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.adminProdutoNovoFormArea::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(217, 92, 120, 0.42);
+}
+
+.adminProdutoNovoFormArea h2 {
+  margin-bottom: 9px;
+  color: var(--vinho-escuro);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1;
+}
+
+.adminProdutoNovoFormArea > p {
+  max-width: 560px;
+  margin-bottom: 22px;
+  color: var(--texto-suave);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.adminProdutoNovoFormulario {
+  display: grid;
+  gap: 14px;
+}
+
+.adminProdutoNovoFormulario label {
+  display: grid;
+  gap: 7px;
+}
+
+.adminProdutoNovoFormulario label span {
+  color: var(--vinho);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.adminProdutoNovoFormulario input,
+.adminProdutoNovoFormulario textarea,
+.adminProdutoNovoFormulario select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border-radius: 16px;
+  color: var(--vinho-escuro);
+  background: rgba(255, 241, 243, 0.72);
+  border: 1px solid rgba(140, 45, 78, 0.11);
+  outline: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.adminProdutoNovoFormulario textarea {
+  min-height: 105px;
+  padding-top: 13px;
+  resize: vertical;
+}
+
+.adminProdutoNovoFormulario input:focus,
+.adminProdutoNovoFormulario textarea:focus,
+.adminProdutoNovoFormulario select:focus {
+  border-color: rgba(217, 92, 120, 0.55);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 4px rgba(237, 137, 151, 0.13);
+}
+
+.adminProdutoNovoFormulario input:disabled {
+  opacity: 0.62;
+  cursor: not-allowed;
+}
+
+.adminProdutoNovoLinha {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.adminProdutoNovoChecks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.adminProdutoNovoChecks label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px;
+  border-radius: 16px;
+  color: var(--vinho);
+  background: rgba(251, 213, 217, 0.45);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.adminProdutoNovoChecks input {
+  width: 17px;
+  height: 17px;
+  min-height: auto;
+  flex-shrink: 0;
+  padding: 0;
+  accent-color: var(--rosa-forte);
+}
+
+/* AÇÕES */
+
+.adminProdutoNovoAcoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.adminProdutoNovoAcoes button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.adminProdutoNovoAcoes button:first-child {
+  color: var(--vinho);
+  background: rgba(251, 213, 217, 0.55);
+}
+
+.adminProdutoNovoAcoes button:last-child {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+  box-shadow: 0 14px 30px rgba(140, 45, 78, 0.18);
+}
+
+.adminProdutoNovoAcoes button:disabled,
+.adminProdutoNovoBotaoTopo:disabled,
+.adminProdutoNovoBotaoSecundario:disabled {
+  opacity: 0.62;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
+
+@keyframes adminProdutoNovoSkeleton {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1180px) {
+  .adminProdutoNovoLista,
+  .adminProdutoNovoSkeleton {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adminProdutoNovoModal {
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .adminProdutoNovoGaleria,
+  .adminProdutoNovoFormArea {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 900px) {
+  .adminProdutoNovoTopo {
+    flex-direction: column;
+  }
+
+  .adminProdutoNovoTopoAcoes {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adminProdutoNovoBotaoTopo,
+  .adminProdutoNovoBotaoSecundario {
+    width: 100%;
+  }
+
+  .adminProdutoNovoPainelTopo {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 760px) {
+  .adminProdutoNovoHero {
+    padding: 34px 18px 24px;
+  }
+
+  .adminProdutoNovoPainel {
+    margin: 0 18px 42px;
+    padding: 18px;
+    border-radius: 28px;
+  }
+
+  .adminProdutoNovoLista,
+  .adminProdutoNovoSkeleton {
+    grid-template-columns: 1fr;
+  }
+
+  .adminProdutoNovoCard {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .adminProdutoNovoCardImagem {
+    width: 96px;
+    height: 120px;
+  }
+
+  .adminProdutoNovoModalOverlay {
+    padding: 12px;
+  }
+
+  .adminProdutoNovoModal {
+    width: min(96vw, 100%);
+    max-height: 94vh;
+    height: 94vh;
+    border-radius: 28px;
+  }
+
+  .adminProdutoNovoGaleria {
+    padding: 22px;
+  }
+
+  .adminProdutoNovoImagemPrincipal {
+    height: 340px;
+  }
+
+  .adminProdutoNovoMiniaturas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adminProdutoNovoFormArea {
+    padding: 30px 22px;
+  }
+
+  .adminProdutoNovoLinha,
+  .adminProdutoNovoChecks {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .adminProdutoNovoTopoAcoes {
+    grid-template-columns: 1fr;
+  }
+
+  .adminProdutoNovoPainelTopo a {
+    width: 100%;
+  }
+
+  .adminProdutoNovoCard {
+    grid-template-columns: 1fr;
+  }
+
+  .adminProdutoNovoCardImagem {
+    width: 100%;
+    height: 210px;
+  }
+}
+
+@media (max-width: 430px) {
+  .adminProdutoNovoTopo h1 {
+    font-size: 38px;
+  }
+
+  .adminProdutoNovoImagemPrincipal {
+    height: 290px;
+  }
+
+  .adminProdutoNovoMiniaturas {
+    grid-template-columns: 1fr;
+  }
+
+  .adminProdutoNovoAcoes {
+    grid-template-columns: 1fr;
+  }
+
+  .adminProdutoNovoFormulario input,
+  .adminProdutoNovoFormulario textarea,
+  .adminProdutoNovoFormulario select {
+    font-size: 12px;
+  }
+
+  .adminProdutoNovoChecks label {
+    font-size: 11px;
+  }
+}

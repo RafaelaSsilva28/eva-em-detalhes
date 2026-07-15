@@ -1,0 +1,1209 @@
+.modalProdutoOverlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 3000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background:
+    rgba(51, 21, 33, 0.58);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  overflow: hidden;
+
+  animation:
+    modalOverlayEntrada 0.3s ease both;
+}
+
+.modalProduto {
+  position: relative;
+
+  width: min(1120px, 100%);
+  height: min(760px, calc(100dvh - 48px));
+  max-height: calc(100dvh - 48px);
+
+  border-radius: 34px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(237, 137, 151, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(133, 141, 58, 0.12),
+      transparent 24%
+    ),
+    linear-gradient(
+      145deg,
+      #fffdfb,
+      #fff5f2
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 35px 90px rgba(45, 13, 27, 0.35);
+
+  overflow: hidden;
+
+  animation:
+    modalProdutoEntrada 0.42s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+/* =========================================================
+   ROLAGEM INTERNA
+========================================================= */
+
+.modalProdutoRolagem {
+  width: 100%;
+  height: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  overscroll-behavior: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    var(--rosa-forte)
+    rgba(251, 213, 217, 0.35);
+}
+
+.modalProdutoRolagem::-webkit-scrollbar {
+  width: 9px;
+}
+
+.modalProdutoRolagem::-webkit-scrollbar-track {
+  margin: 24px 0;
+
+  border-radius: 999px;
+
+  background:
+    rgba(251, 213, 217, 0.3);
+}
+
+.modalProdutoRolagem::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  border: 2px solid transparent;
+
+  background:
+    linear-gradient(
+      var(--rosa-principal),
+      var(--vinho)
+    );
+
+  background-clip: padding-box;
+}
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.modalProdutoFechar {
+  position: absolute;
+
+  top: 18px;
+  right: 22px;
+
+  z-index: 30;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.12);
+
+  box-shadow:
+    0 12px 28px rgba(95, 29, 53, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.modalProdutoFechar:hover {
+  transform: rotate(90deg);
+
+  color: var(--branco);
+
+  background: var(--vinho);
+}
+
+.modalProdutoFechar svg {
+  font-size: 24px;
+}
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+.modalProdutoConteudo {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.9fr);
+
+  align-items: stretch;
+
+  gap: 42px;
+
+  min-height: 100%;
+
+  padding:
+    34px 38px 38px 34px;
+}
+
+/* =========================================================
+   GALERIA
+========================================================= */
+
+.modalProdutoGaleria {
+  position: relative;
+
+  min-width: 0;
+
+  align-self: stretch;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.modalProdutoImagemPrincipal {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 0.9 / 1;
+
+  min-height: 520px;
+  max-height: 590px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--rosa-claro),
+      var(--creme)
+    );
+
+  box-shadow:
+    0 20px 50px rgba(95, 29, 53, 0.14);
+}
+
+.modalProdutoImagemPrincipal img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.modalProdutoSemImagem {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 30% 24%,
+      rgba(255, 255, 255, 0.92),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      var(--rosa-claro),
+      var(--creme)
+    );
+}
+
+.modalProdutoSemImagem span {
+  color: var(--vinho);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 120px;
+  font-weight: 700;
+}
+
+.modalProdutoSemImagem small {
+  color: var(--rosa-forte);
+
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: 34px;
+}
+
+/* =========================================================
+   NAVEGAÇÃO DAS IMAGENS
+========================================================= */
+
+.modalProdutoNavegacao {
+  position: absolute;
+
+  top: 50%;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  box-shadow:
+    0 12px 28px rgba(45, 13, 27, 0.18);
+
+  transform: translateY(-50%);
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.modalProdutoNavegacao:hover {
+  color: var(--branco);
+
+  background: var(--vinho);
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.modalProdutoNavegacao svg {
+  font-size: 25px;
+}
+
+.modalProdutoAnterior {
+  left: 16px;
+}
+
+.modalProdutoProxima {
+  right: 16px;
+}
+
+.modalProdutoContador {
+  position: absolute;
+
+  right: 16px;
+  bottom: 16px;
+
+  padding: 9px 14px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.86);
+
+  box-shadow:
+    0 8px 22px rgba(45, 13, 27, 0.14);
+
+  backdrop-filter: blur(12px);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   MINIATURAS
+========================================================= */
+
+.modalProdutoMiniaturas {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 15px;
+  padding: 3px 2px 7px;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+}
+
+.modalProdutoMiniatura {
+  width: 78px;
+  height: 78px;
+
+  flex-shrink: 0;
+
+  padding: 4px;
+
+  border-radius: 17px;
+
+  background: var(--branco);
+
+  border:
+    2px solid transparent;
+
+  opacity: 0.7;
+
+  transition:
+    opacity 0.3s ease,
+    border 0.3s ease,
+    transform 0.3s ease;
+}
+
+.modalProdutoMiniatura:hover {
+  opacity: 1;
+
+  transform: translateY(-3px);
+}
+
+.modalProdutoMiniaturaAtiva {
+  opacity: 1;
+
+  border-color:
+    var(--rosa-forte);
+
+  box-shadow:
+    0 8px 20px rgba(140, 45, 78, 0.18);
+}
+
+.modalProdutoMiniatura img {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 12px;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   BLOCO DECORATIVO ABAIXO DA FOTO
+========================================================= */
+
+.modalProdutoArte {
+  position: relative;
+
+  display: grid;
+  grid-template-columns:
+    auto 1fr;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: auto;
+  padding:
+    21px 82px 21px 20px;
+
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 94% 25%,
+      rgba(237, 137, 151, 0.23),
+      transparent 36%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 235, 236, 0.86)
+    );
+
+  border:
+    1px solid rgba(140, 45, 78, 0.1);
+
+  box-shadow:
+    0 15px 35px rgba(95, 29, 53, 0.09);
+
+  overflow: hidden;
+}
+
+.modalProdutoArteIcone {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 10px 25px rgba(140, 45, 78, 0.22);
+}
+
+.modalProdutoArteIcone svg {
+  font-size: 23px;
+
+  fill: currentColor;
+}
+
+.modalProdutoArteTexto {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.modalProdutoArteTexto > span {
+  color: var(--rosa-forte);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.modalProdutoArteTexto strong {
+  color: var(--vinho-escuro);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.modalProdutoArteTexto p {
+  margin-top: 3px;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.modalProdutoArteFlor {
+  position: absolute;
+
+  right: 8px;
+  bottom: -6px;
+
+  width: 78px;
+  height: 78px;
+
+  opacity: 0.55;
+
+  transform:
+    rotate(13deg);
+}
+
+.modalProdutoArteFlor i {
+  position: absolute;
+
+  left: 27px;
+  top: 4px;
+
+  width: 25px;
+  height: 37px;
+
+  border-radius:
+    52% 52% 48% 48%;
+
+  background:
+    linear-gradient(
+      var(--rosa-principal),
+      var(--rosa-forte)
+    );
+
+  transform-origin:
+    12px 35px;
+}
+
+.modalProdutoArteFlor i:nth-child(2) {
+  transform: rotate(72deg);
+}
+
+.modalProdutoArteFlor i:nth-child(3) {
+  transform: rotate(144deg);
+}
+
+.modalProdutoArteFlor i:nth-child(4) {
+  transform: rotate(216deg);
+}
+
+.modalProdutoArteFlor i:nth-child(5) {
+  transform: rotate(288deg);
+}
+
+.modalProdutoArteFlor b {
+  position: absolute;
+
+  left: 29px;
+  top: 29px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background:
+    var(--creme);
+
+  border:
+    2px dashed var(--vinho);
+}
+
+/* =========================================================
+   INFORMAÇÕES DO PRODUTO
+========================================================= */
+
+.modalProdutoInformacoes {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  min-width: 0;
+
+  padding:
+    42px 4px 30px 0;
+}
+
+.modalProdutoTopo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.modalProdutoCategoria {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--rosa-forte);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modalProdutoFavorito {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 14px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.12);
+
+  box-shadow:
+    0 9px 24px rgba(95, 29, 53, 0.09);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.modalProdutoFavorito:hover {
+  transform:
+    translateY(-3px);
+
+  color: var(--branco);
+
+  background: var(--rosa-forte);
+}
+
+.modalProdutoFavoritoAtivo {
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+}
+
+.modalProdutoFavoritoAtivo svg {
+  fill: currentColor;
+}
+
+.modalProdutoInformacoes h2 {
+  margin-bottom: 18px;
+
+  padding-right: 48px;
+
+  font-size:
+    clamp(36px, 4vw, 55px);
+}
+
+.modalProdutoPreco {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  margin-bottom: 25px;
+}
+
+.modalProdutoPreco small {
+  color: var(--texto-suave);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.modalProdutoPreco strong {
+  color: var(--vinho);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 32px;
+}
+
+.modalProdutoDescricao {
+  margin-bottom: 28px;
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   DETALHES
+========================================================= */
+
+.modalProdutoDetalhes {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+}
+
+.modalProdutoDetalhe {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 14px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.65);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.08);
+}
+
+.modalProdutoDetalhe > span {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  color: var(--vinho);
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--rosa-claro),
+      var(--creme)
+    );
+}
+
+.modalProdutoDetalhe > span svg {
+  font-size: 20px;
+}
+
+.modalProdutoDetalhe div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.modalProdutoDetalhe small {
+  color: var(--texto-suave);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.modalProdutoDetalhe strong {
+  color: var(--texto);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   ETIQUETAS
+========================================================= */
+
+.modalProdutoEtiquetas {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 28px;
+}
+
+.modalProdutoEtiquetas span {
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  color: var(--vinho);
+
+  background:
+    rgba(251, 213, 217, 0.72);
+
+  border:
+    1px solid rgba(140, 45, 78, 0.09);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   BOTÃO WHATSAPP
+========================================================= */
+
+.modalProdutoWhatsApp {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  padding: 15px 22px;
+
+  border-radius: 999px;
+
+  color: var(--branco);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--rosa-forte),
+      var(--vinho)
+    );
+
+  box-shadow:
+    0 15px 35px rgba(140, 45, 78, 0.28);
+
+  font-size: 15px;
+  font-weight: 800;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.modalProdutoWhatsApp:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 20px 42px rgba(140, 45, 78, 0.36);
+}
+
+.modalProdutoWhatsApp svg {
+  font-size: 21px;
+}
+
+.modalProdutoObservacao {
+  margin-top: 14px;
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   CARREGAMENTO
+========================================================= */
+
+.modalProdutoCarregando {
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+}
+
+.modalProdutoSpinner {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  border:
+    4px solid rgba(140, 45, 78, 0.12);
+
+  border-top-color:
+    var(--rosa-forte);
+
+  animation:
+    modalProdutoGirar 0.8s linear infinite;
+}
+
+/* =========================================================
+   FORMAS DECORATIVAS
+========================================================= */
+
+.modalProdutoForma {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  opacity: 0.4;
+}
+
+.modalProdutoFormaUm {
+  width: 140px;
+  height: 140px;
+
+  right: -55px;
+  top: 120px;
+
+  background:
+    rgba(237, 137, 151, 0.2);
+}
+
+.modalProdutoFormaDois {
+  width: 100px;
+  height: 100px;
+
+  left: -40px;
+  bottom: 50px;
+
+  background:
+    rgba(133, 141, 58, 0.13);
+}
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes modalOverlayEntrada {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalProdutoEntrada {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes modalProdutoGirar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .modalProduto {
+    height:
+      min(900px, calc(100dvh - 36px));
+
+    max-height:
+      calc(100dvh - 36px);
+  }
+
+  .modalProdutoConteudo {
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+
+    padding:
+      72px 28px 38px;
+  }
+
+  .modalProdutoGaleria {
+    height: auto;
+  }
+
+  .modalProdutoImagemPrincipal {
+    aspect-ratio: 1 / 0.82;
+
+    min-height: 480px;
+    max-height: none;
+  }
+
+  .modalProdutoSemImagem {
+    min-height: 480px;
+  }
+
+  .modalProdutoArte {
+    margin-top: 18px;
+  }
+
+  .modalProdutoInformacoes {
+    padding:
+      0 4px 10px;
+  }
+}
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+  .modalProdutoOverlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .modalProduto {
+    width: 100%;
+    height: 94dvh;
+    max-height: 94dvh;
+
+    border-radius:
+      30px 30px 0 0;
+  }
+
+  .modalProdutoRolagem::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .modalProdutoConteudo {
+    gap: 24px;
+
+    padding:
+      72px 16px 32px;
+  }
+
+  .modalProdutoFechar {
+    top: 14px;
+    right: 14px;
+  }
+
+  .modalProdutoGaleria {
+    height: auto;
+  }
+
+  .modalProdutoImagemPrincipal {
+    aspect-ratio: 1 / 1;
+
+    min-height: 340px;
+    max-height: 410px;
+  }
+
+  .modalProdutoSemImagem {
+    min-height: 340px;
+  }
+
+  .modalProdutoTopo {
+    align-items: flex-start;
+  }
+
+  .modalProdutoFavorito span {
+    display: none;
+  }
+
+  .modalProdutoFavorito {
+    width: 46px;
+    height: 46px;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .modalProdutoInformacoes h2 {
+    padding-right: 0;
+
+    font-size: 34px;
+  }
+
+  .modalProdutoPreco strong {
+    font-size: 28px;
+  }
+
+  .modalProdutoMiniatura {
+    width: 68px;
+    height: 68px;
+  }
+
+  .modalProdutoNavegacao {
+    width: 44px;
+    height: 44px;
+  }
+
+  .modalProdutoArte {
+    margin-top: 18px;
+
+    grid-template-columns:
+      auto 1fr;
+
+    padding:
+      18px 64px 18px 16px;
+  }
+
+  .modalProdutoArteIcone {
+    width: 48px;
+    height: 48px;
+  }
+
+  .modalProdutoArteTexto strong {
+    font-size: 14px;
+  }
+
+  .modalProdutoArteTexto p {
+    font-size: 10px;
+  }
+
+  .modalProdutoArteFlor {
+    right: -4px;
+    bottom: -8px;
+
+    transform:
+      scale(0.82)
+      rotate(13deg);
+  }
+}
+
+/* =========================================================
+   CELULARES MENORES
+========================================================= */
+
+@media (max-width: 390px) {
+  .modalProdutoConteudo {
+    padding:
+      70px 12px 28px;
+  }
+
+  .modalProdutoImagemPrincipal {
+    min-height: 310px;
+  }
+
+  .modalProdutoSemImagem {
+    min-height: 310px;
+  }
+
+  .modalProdutoInformacoes h2 {
+    font-size: 30px;
+  }
+
+  .modalProdutoArte {
+    padding:
+      16px 54px 16px 14px;
+  }
+
+  .modalProdutoArteIcone {
+    width: 44px;
+    height: 44px;
+  }
+
+  .modalProdutoArteTexto strong {
+    font-size: 13px;
+  }
+}

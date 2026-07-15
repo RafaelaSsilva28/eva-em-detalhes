@@ -1,0 +1,1220 @@
+.adminProdutosPagina {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff9f7 0%, #fff1f3 50%, #fff8ef 100%);
+  overflow: hidden;
+}
+
+/* HERO */
+
+.adminProdutosHero {
+  position: relative;
+  padding: 46px 42px 30px;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(237, 137, 151, 0.22), transparent 28%),
+    radial-gradient(circle at 92% 20%, rgba(133, 141, 58, 0.12), transparent 25%);
+  overflow: hidden;
+}
+
+.adminProdutosTopo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 26px;
+  margin-bottom: 28px;
+}
+
+.adminProdutosVoltar {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+  box-shadow: 0 10px 24px rgba(95, 29, 53, 0.07);
+  font-size: 12px;
+  font-weight: 900;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.adminProdutosVoltar:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.adminProdutosTag {
+  display: inline-flex;
+  margin-bottom: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(140, 45, 78, 0.1);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.adminProdutosTopo h1 {
+  margin-bottom: 10px;
+  color: var(--vinho-escuro);
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 0.95;
+}
+
+.adminProdutosTopo h1 span {
+  display: block;
+  color: var(--rosa-forte);
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+}
+
+.adminProdutosTopo p {
+  max-width: 630px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.adminProdutosAcoesTopo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adminProdutosBotaoPrimario,
+.adminProdutosBotaoSecundario {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 17px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.adminProdutosBotaoPrimario {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+  box-shadow: 0 14px 30px rgba(140, 45, 78, 0.22);
+}
+
+.adminProdutosBotaoSecundario {
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+}
+
+.adminProdutosBotaoPrimario:hover,
+.adminProdutosBotaoSecundario:hover {
+  transform: translateY(-3px);
+}
+
+/* DECORAÇÃO */
+
+.adminProdutosDecoracao {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.adminProdutosForma {
+  position: absolute;
+  border-radius: 55% 45% 63% 37% / 45% 54% 46% 55%;
+}
+
+.adminProdutosFormaUm {
+  width: 300px;
+  height: 300px;
+  right: -100px;
+  top: -110px;
+  background: rgba(237, 137, 151, 0.14);
+}
+
+.adminProdutosFormaDois {
+  width: 210px;
+  height: 210px;
+  left: 42%;
+  bottom: -120px;
+  background: rgba(133, 141, 58, 0.1);
+}
+
+.adminProdutosIconeDecorativo {
+  position: absolute;
+  color: rgba(140, 45, 78, 0.12);
+  font-size: 46px;
+}
+
+.adminProdutosIconeUm {
+  right: 18%;
+  top: 115px;
+  transform: rotate(-16deg);
+}
+
+.adminProdutosIconeDois {
+  left: 45%;
+  bottom: 40px;
+  font-size: 38px;
+}
+
+/* RESUMO */
+
+.adminProdutosResumo {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.adminProdutosResumo article {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(140, 45, 78, 0.1);
+  box-shadow: 0 18px 42px rgba(95, 29, 53, 0.08);
+}
+
+.adminProdutosResumo svg {
+  width: 54px;
+  height: 54px;
+  padding: 14px;
+  flex-shrink: 0;
+  border-radius: 42% 58% 58% 42% / 52% 42% 58% 48%;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+}
+
+.adminProdutosResumo span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--texto-suave);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.adminProdutosResumo strong {
+  color: var(--vinho-escuro);
+  font-size: 31px;
+  line-height: 1;
+}
+
+/* CONTEÚDO */
+
+.adminProdutosConteudo {
+  padding: 30px 42px 55px;
+}
+
+/* FILTROS */
+
+.adminProdutosFiltros {
+  display: grid;
+  grid-template-columns:
+    minmax(250px, 1.4fr)
+    minmax(180px, 0.8fr)
+    minmax(160px, 0.7fr)
+    minmax(170px, 0.7fr)
+    auto;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 18px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+  box-shadow: 0 18px 42px rgba(95, 29, 53, 0.08);
+}
+
+.adminProdutosBusca,
+.adminProdutosSelectBox {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  border-radius: 17px;
+  background: rgba(255, 241, 243, 0.58);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+}
+
+.adminProdutosBusca svg,
+.adminProdutosSelectBox svg {
+  flex-shrink: 0;
+  color: var(--rosa-forte);
+  font-size: 18px;
+}
+
+.adminProdutosBusca input,
+.adminProdutosSelectBox select {
+  width: 100%;
+  color: var(--vinho-escuro);
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.adminProdutosBusca input::placeholder {
+  color: rgba(95, 29, 53, 0.42);
+}
+
+.adminProdutosLimpar {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border-radius: 17px;
+  color: var(--vinho);
+  background: rgba(255, 241, 243, 0.58);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.adminProdutosLimpar:hover {
+  transform: translateY(-2px);
+  background: rgba(251, 213, 217, 0.72);
+}
+
+/* CARREGANDO */
+
+.adminProdutosCarregando {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.adminProdutosCarregando span {
+  min-height: 410px;
+  border-radius: 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(251, 213, 217, 0.55),
+    rgba(255, 255, 255, 0.92),
+    rgba(251, 213, 217, 0.55)
+  );
+  background-size: 220% 100%;
+  animation: adminProdutoSkeleton 1.5s infinite;
+}
+
+/* GRID */
+
+.adminProdutosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.adminProdutoCard {
+  position: relative;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(140, 45, 78, 0.1);
+  box-shadow: 0 22px 55px rgba(95, 29, 53, 0.1);
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, opacity 0.28s ease;
+}
+
+.adminProdutoCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 70px rgba(95, 29, 53, 0.16);
+}
+
+.adminProdutoCardInativo {
+  opacity: 0.68;
+}
+
+.adminProdutoImagem {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--rosa-claro), var(--creme));
+}
+
+.adminProdutoImagem img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.adminProdutoCard:hover .adminProdutoImagem img {
+  transform: scale(1.07);
+}
+
+.adminProdutoSemImagem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--vinho);
+}
+
+.adminProdutoSemImagem svg {
+  font-size: 42px;
+}
+
+.adminProdutoSemImagem span {
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.adminProdutoBadges {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adminProdutoBadges span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.86);
+  font-size: 10px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(95, 29, 53, 0.12);
+}
+
+.adminProdutoInfo {
+  padding: 20px;
+}
+
+.adminProdutoCategoria {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--rosa-forte);
+  background: rgba(251, 213, 217, 0.55);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.adminProdutoInfo h3 {
+  margin-bottom: 8px;
+  color: var(--vinho-escuro);
+  font-size: 23px;
+  line-height: 1.1;
+}
+
+.adminProdutoInfo p {
+  min-height: 44px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.adminProdutoMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.adminProdutoMeta strong {
+  color: var(--vinho);
+  font-size: 18px;
+}
+
+.adminProdutoMeta small {
+  color: var(--texto-suave);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* AÇÕES CARD */
+
+.adminProdutoAcoes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0 20px 20px;
+}
+
+.adminProdutoAcao {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 8px;
+  border-radius: 14px;
+  color: var(--vinho);
+  background: rgba(255, 241, 243, 0.7);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+  font-size: 11px;
+  font-weight: 900;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.adminProdutoAcao:hover {
+  transform: translateY(-2px);
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+}
+
+.adminProdutoEditar {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+}
+
+.adminProdutoExcluir {
+  color: #9d243d;
+  background: rgba(255, 231, 235, 0.85);
+}
+
+/* VAZIO */
+
+.adminProdutosVazio {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-align: center;
+  padding: 40px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px dashed rgba(140, 45, 78, 0.18);
+  box-shadow: 0 22px 55px rgba(95, 29, 53, 0.09);
+}
+
+.adminProdutosVazio svg {
+  color: var(--rosa-forte);
+  font-size: 48px;
+}
+
+.adminProdutosVazio h2 {
+  color: var(--vinho-escuro);
+}
+
+.adminProdutosVazio p {
+  max-width: 420px;
+  font-size: 14px;
+}
+
+.adminProdutosVazio button {
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 999px;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* MODAL OVERLAY */
+
+.adminModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(95, 29, 53, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.adminModalFechar {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  z-index: 12;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--vinho);
+  background: rgba(251, 213, 217, 0.72);
+  box-shadow: 0 10px 22px rgba(95, 29, 53, 0.12);
+}
+
+/* MODAL EXCLUIR */
+
+.adminModalExcluirProduto {
+  position: relative;
+  width: min(430px, 100%);
+  padding: 34px;
+  border-radius: 32px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(237, 137, 151, 0.18), transparent 30%),
+    #fffaf7;
+  box-shadow: 0 30px 80px rgba(95, 29, 53, 0.22);
+}
+
+.adminModalIcone {
+  width: 74px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  border-radius: 42% 58% 58% 42% / 52% 42% 58% 48%;
+  color: var(--branco);
+  background: linear-gradient(135deg, #e85b79, #8c2d4e);
+}
+
+.adminModalIcone svg {
+  font-size: 30px;
+}
+
+.adminModalExcluirProduto h2 {
+  margin-bottom: 10px;
+  color: var(--vinho-escuro);
+}
+
+.adminModalExcluirProduto p {
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.adminModalExcluirProduto p strong {
+  color: var(--vinho);
+}
+
+/* MODAL PRODUTO IGUAL VITRINE */
+
+.adminModalProdutoEditar {
+  position: relative;
+  width: min(1180px, 96vw);
+  max-height: 92vh;
+  display: grid;
+  grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.05fr);
+  gap: 0;
+  overflow: hidden;
+  border-radius: 34px;
+  background: #fffaf7;
+  box-shadow: 0 34px 90px rgba(95, 29, 53, 0.28);
+}
+
+.adminModalProdutoGaleria {
+  position: relative;
+  min-height: 680px;
+  padding: 30px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.72), transparent 32%),
+    linear-gradient(145deg, #fbd5d9, #fff2f4 48%, #fff8ec);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 92, 120, 0.42) transparent;
+}
+
+.adminModalProdutoGaleria::-webkit-scrollbar,
+.adminModalProdutoInfo::-webkit-scrollbar {
+  width: 7px;
+}
+
+.adminModalProdutoGaleria::-webkit-scrollbar-track,
+.adminModalProdutoInfo::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.adminModalProdutoGaleria::-webkit-scrollbar-thumb,
+.adminModalProdutoInfo::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(217, 92, 120, 0.42);
+}
+
+.adminModalProdutoImagemPrincipal {
+  position: relative;
+  height: 440px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--rosa-claro), var(--creme));
+  box-shadow: 0 22px 48px rgba(95, 29, 53, 0.16);
+}
+
+.adminModalProdutoImagemPrincipal img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.adminModalProdutoSemImagem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  text-align: center;
+  padding: 28px;
+  color: var(--vinho);
+}
+
+.adminModalProdutoSemImagem svg {
+  font-size: 50px;
+}
+
+.adminModalProdutoSemImagem strong {
+  font-size: 20px;
+}
+
+.adminModalProdutoSemImagem span {
+  max-width: 270px;
+  color: var(--texto-suave);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.adminModalProdutoSelo {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+  box-shadow: 0 12px 28px rgba(95, 29, 53, 0.2);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.adminModalProdutoMiniaturas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.adminMiniaturaProduto,
+.adminMiniaturaUpload {
+  position: relative;
+  height: 112px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+  border: 2px solid transparent;
+  box-shadow: 0 12px 24px rgba(95, 29, 53, 0.1);
+}
+
+.adminMiniaturaProdutoAtiva {
+  border-color: var(--rosa-forte);
+  box-shadow:
+    0 0 0 4px rgba(237, 137, 151, 0.18),
+    0 14px 30px rgba(95, 29, 53, 0.16);
+}
+
+.adminMiniaturaProduto img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.adminMiniaturaPrincipal {
+  position: absolute;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  min-height: 27px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 7px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 9px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(95, 29, 53, 0.12);
+}
+
+.adminMiniaturaProdutoAtiva .adminMiniaturaPrincipal {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+}
+
+.adminMiniaturaExcluir {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  width: 27px;
+  height: 27px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #9d243d;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 18px rgba(95, 29, 53, 0.14);
+}
+
+.adminMiniaturaUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: var(--vinho);
+  border: 2px dashed rgba(140, 45, 78, 0.22);
+  cursor: pointer;
+}
+
+.adminMiniaturaUpload svg {
+  font-size: 25px;
+  color: var(--rosa-forte);
+}
+
+.adminMiniaturaUpload span {
+  font-size: 10px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.adminMiniaturaUpload input {
+  display: none;
+}
+
+/* LADO DO FORM */
+
+.adminModalProdutoInfo {
+  max-height: 92vh;
+  padding: 42px 42px 34px;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 92% 7%, rgba(237, 137, 151, 0.14), transparent 28%),
+    #fffaf7;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 92, 120, 0.42) transparent;
+}
+
+.adminModalProdutoTag {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: var(--rosa-forte);
+  background: rgba(251, 213, 217, 0.5);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.adminModalProdutoInfo h2 {
+  margin-bottom: 9px;
+  color: var(--vinho-escuro);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1;
+}
+
+.adminModalProdutoInfo > p {
+  max-width: 560px;
+  margin-bottom: 22px;
+  color: var(--texto-suave);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* FORM */
+
+.adminFormularioEdicao {
+  display: grid;
+  gap: 14px;
+}
+
+.adminFormularioEdicao label {
+  display: grid;
+  gap: 7px;
+}
+
+.adminFormularioEdicao label span {
+  color: var(--vinho);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.adminFormularioEdicao input,
+.adminFormularioEdicao textarea,
+.adminFormularioEdicao select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 14px;
+  border-radius: 16px;
+  color: var(--vinho-escuro);
+  background: rgba(255, 241, 243, 0.72);
+  border: 1px solid rgba(140, 45, 78, 0.11);
+  outline: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.adminFormularioEdicao textarea {
+  min-height: 105px;
+  padding-top: 13px;
+  resize: vertical;
+}
+
+.adminFormularioEdicao input:focus,
+.adminFormularioEdicao textarea:focus,
+.adminFormularioEdicao select:focus {
+  border-color: rgba(217, 92, 120, 0.55);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 4px rgba(237, 137, 151, 0.13);
+}
+
+.adminFormularioEdicao input:disabled {
+  opacity: 0.62;
+  cursor: not-allowed;
+}
+
+.adminFormularioLinha {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.adminChecksEdicao {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.adminChecksEdicao label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px;
+  border-radius: 16px;
+  color: var(--vinho);
+  background: rgba(251, 213, 217, 0.45);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.adminChecksEdicao input {
+  width: 17px;
+  height: 17px;
+  min-height: auto;
+  flex-shrink: 0;
+  padding: 0;
+  accent-color: var(--rosa-forte);
+}
+
+.adminModalAcoes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.adminModalAcoes button {
+  min-height: 46px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(251, 213, 217, 0.55);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.adminModalAcoes .adminModalSalvar,
+.adminModalAcoes .adminModalExcluir {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+}
+
+.adminEdicaoCarregando {
+  min-height: 420px;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vinho);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes adminProdutoSkeleton {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1180px) {
+  .adminProdutosResumo {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .adminProdutosGrid,
+  .adminProdutosCarregando {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adminProdutosFiltros {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adminProdutosBusca {
+    grid-column: 1 / -1;
+  }
+
+  .adminModalProdutoEditar {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+
+  .adminModalProdutoGaleria {
+    min-height: auto;
+  }
+
+  .adminModalProdutoInfo {
+    max-height: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .adminProdutosHero {
+    padding: 34px 18px 24px;
+  }
+
+  .adminProdutosTopo {
+    flex-direction: column;
+  }
+
+  .adminProdutosAcoesTopo {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .adminProdutosBotaoPrimario,
+  .adminProdutosBotaoSecundario {
+    width: 100%;
+  }
+
+  .adminProdutosResumo,
+  .adminProdutosGrid,
+  .adminProdutosCarregando {
+    grid-template-columns: 1fr;
+  }
+
+  .adminProdutosConteudo {
+    padding: 24px 18px 42px;
+  }
+
+  .adminProdutosFiltros {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    border-radius: 24px;
+  }
+
+  .adminProdutoImagem {
+    height: 210px;
+  }
+
+  .adminProdutoAcoes {
+    grid-template-columns: 1fr;
+  }
+
+  .adminModalOverlay {
+    padding: 12px;
+  }
+
+  .adminModalProdutoEditar {
+    width: min(96vw, 100%);
+    max-height: 94vh;
+    border-radius: 28px;
+  }
+
+  .adminModalProdutoGaleria {
+    padding: 22px;
+  }
+
+  .adminModalProdutoImagemPrincipal {
+    height: 340px;
+  }
+
+  .adminModalProdutoInfo {
+    padding: 30px 22px;
+  }
+
+  .adminFormularioLinha,
+  .adminChecksEdicao {
+    grid-template-columns: 1fr;
+  }
+
+  .adminModalProdutoMiniaturas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 430px) {
+  .adminProdutosTopo h1 {
+    font-size: 38px;
+  }
+
+  .adminProdutosAcoesTopo {
+    grid-template-columns: 1fr;
+  }
+
+  .adminProdutosResumo article {
+    padding: 18px;
+  }
+
+  .adminProdutosResumo svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .adminModalProdutoImagemPrincipal {
+    height: 290px;
+  }
+
+  .adminModalProdutoMiniaturas {
+    grid-template-columns: 1fr;
+  }
+
+  .adminModalAcoes {
+    grid-template-columns: 1fr;
+  }
+
+  .adminFormularioEdicao input,
+  .adminFormularioEdicao textarea,
+  .adminFormularioEdicao select {
+    font-size: 12px;
+  }
+
+  .adminChecksEdicao label {
+    font-size: 11px;
+  }
+}
+/* =========================================================
+   CORREÇÃO DEFINITIVA DO SCROLL DO MODAL DE EDIÇÃO
+========================================================= */
+
+.adminModalProdutoEditar {
+  height: 92vh;
+  max-height: 92vh;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.05fr);
+}
+
+.adminModalProdutoGaleria,
+.adminModalProdutoInfo {
+  height: 100%;
+  max-height: 92vh;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  overscroll-behavior: contain;
+}
+
+/* Esconde a barra da esquerda, mas mantém o scroll funcionando */
+.adminModalProdutoGaleria {
+  scrollbar-width: none;
+}
+
+.adminModalProdutoGaleria::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Mantém scroll bonito do lado direito */
+.adminModalProdutoInfo {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 92, 120, 0.42) transparent;
+}
+
+.adminModalProdutoInfo::-webkit-scrollbar {
+  width: 7px;
+}
+
+.adminModalProdutoInfo::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.adminModalProdutoInfo::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(217, 92, 120, 0.42);
+}
+
+.adminModalProdutoGaleria {
+  padding-bottom: 42px;
+}
+
+.adminModalProdutoMiniaturas {
+  padding-bottom: 32px;
+}
+
+/* Mobile/tablet: o modal inteiro rola junto */
+@media (max-width: 1180px) {
+  .adminModalProdutoEditar {
+    height: 92vh;
+    max-height: 92vh;
+
+    display: block;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .adminModalProdutoGaleria,
+  .adminModalProdutoInfo {
+    height: auto;
+    max-height: none;
+
+    overflow: visible;
+  }
+}

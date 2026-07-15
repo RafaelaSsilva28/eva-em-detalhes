@@ -1,0 +1,799 @@
+.dashboardPagina {
+  min-height: 100vh;
+  display: block;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(237, 137, 151, 0.18), transparent 28%),
+    radial-gradient(circle at 94% 12%, rgba(133, 141, 58, 0.1), transparent 24%),
+    linear-gradient(135deg, #fff9f7 0%, #fff1f3 50%, #fff8ef 100%);
+  overflow-x: hidden;
+}
+
+/* SIDEBAR */
+
+.dashboardSidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 252px;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 18px 24px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.12), transparent 26%),
+    linear-gradient(180deg, var(--vinho), #a7375b 58%, var(--rosa-forte));
+  box-shadow: 18px 0 45px rgba(95, 29, 53, 0.14);
+  overflow: hidden;
+  scrollbar-width: none;
+  z-index: 20;
+}
+
+.dashboardSidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboardSidebar::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  left: -90px;
+  bottom: -80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.dashboardLogoArea {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 38px;
+}
+
+.dashboardLogoSelo {
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 14px 28px rgba(95, 29, 53, 0.2);
+}
+
+.dashboardLogoSelo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+}
+
+.dashboardLogoArea strong {
+  display: block;
+  color: var(--branco);
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  line-height: 0.9;
+}
+
+.dashboardLogoArea span {
+  color: var(--rosa-claro);
+  font-family: "Great Vibes", cursive;
+  font-size: 24px;
+}
+
+.dashboardMenu {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dashboardMenuItem {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 16px;
+  border-radius: 17px;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  font-size: 13px;
+  font-weight: 900;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.dashboardMenuItem:hover,
+.dashboardMenuAtivo {
+  color: var(--branco);
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateX(4px);
+}
+
+.dashboardMenuItem svg {
+  font-size: 17px;
+}
+
+.dashboardSair {
+  position: relative;
+  z-index: 2;
+  min-height: 46px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 28px;
+  border-radius: 999px;
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+  font-weight: 900;
+  box-shadow: 0 14px 28px rgba(95, 29, 53, 0.15);
+}
+
+/* CONTEÚDO */
+
+.dashboardConteudo {
+  min-height: 100vh;
+  min-width: 0;
+  margin-left: 252px;
+  padding: 34px 38px 48px;
+}
+
+.dashboardTopo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 26px;
+  margin-bottom: 24px;
+}
+
+.dashboardTag {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--rosa-forte);
+  background: rgba(251, 213, 217, 0.55);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dashboardTopo h1 {
+  margin-bottom: 8px;
+  color: var(--vinho-escuro);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 5vw, 66px);
+  line-height: 0.95;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+/* AQUI FICA A FONTE BONITA DO NOME, EX: RAFAELA */
+.dashboardTopo h1 span {
+  display: inline;
+  margin-top: 0;
+  margin-left: 10px;
+  color: var(--rosa-forte);
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(48px, 5vw, 76px);
+  font-weight: 400;
+  line-height: 0.85;
+}
+
+.dashboardTopo p {
+  max-width: 650px;
+  color: var(--texto-suave);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.dashboardTopoAcoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboardBotaoPrimario,
+.dashboardBotaoSecundario {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.dashboardBotaoPrimario {
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+  box-shadow: 0 14px 30px rgba(140, 45, 78, 0.22);
+}
+
+.dashboardBotaoSecundario {
+  color: var(--vinho);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+}
+
+.dashboardBotaoSecundario:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* RESUMO */
+
+.dashboardResumo {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.dashboardResumoCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 22px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+  box-shadow: 0 18px 38px rgba(95, 29, 53, 0.08);
+}
+
+.dashboardResumoIcone {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+  box-shadow: 0 14px 28px rgba(140, 45, 78, 0.22);
+}
+
+.dashboardResumoIcone svg {
+  font-size: 23px;
+}
+
+.dashboardResumoCard span {
+  color: var(--texto-suave);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.dashboardResumoCard strong {
+  display: block;
+  color: var(--vinho-escuro);
+  font-size: 32px;
+  line-height: 1;
+}
+
+.dashboardResumoCard p {
+  color: var(--rosa-forte);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* GRID PRINCIPAL */
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(340px, 1fr);
+  gap: 24px;
+}
+
+.dashboardPainel {
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(140, 45, 78, 0.09);
+  box-shadow: 0 24px 60px rgba(95, 29, 53, 0.1);
+}
+
+.dashboardPainel::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -80px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(247, 234, 223, 0.45);
+}
+
+.dashboardSecaoTitulo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.dashboardSecaoTitulo span {
+  display: inline-flex;
+  margin-bottom: 5px;
+  color: var(--rosa-forte);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dashboardSecaoTitulo h2 {
+  color: var(--vinho-escuro);
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1;
+}
+
+.dashboardSecaoTitulo a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--vinho);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* ATALHOS */
+
+.dashboardAtalhosGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.dashboardAtalhoCard {
+  position: relative;
+  min-height: 126px;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: 18px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(237, 137, 151, 0.1), transparent 28%),
+    rgba(255, 250, 247, 0.86);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+  box-shadow: 0 16px 34px rgba(95, 29, 53, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboardAtalhoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px rgba(95, 29, 53, 0.12);
+}
+
+.dashboardAtalhoIcone {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+}
+
+.dashboardAtalhoIcone svg {
+  font-size: 21px;
+}
+
+.dashboardAtalhoCard h3 {
+  margin-bottom: 6px;
+  color: var(--vinho-escuro);
+  font-size: 19px;
+  line-height: 1.1;
+}
+
+.dashboardAtalhoCard p {
+  color: var(--texto-suave);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.dashboardAtalhoSeta {
+  position: absolute;
+  right: 17px;
+  bottom: 17px;
+  color: var(--rosa-forte);
+}
+
+/* ÚLTIMOS PRODUTOS */
+
+.dashboardListaProdutos {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 12px;
+}
+
+.dashboardProdutoItem {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  border-radius: 18px;
+  background: rgba(255, 241, 243, 0.72);
+  border: 1px solid rgba(140, 45, 78, 0.08);
+}
+
+.dashboardProdutoIcone {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--branco);
+  background: linear-gradient(135deg, var(--rosa-forte), var(--vinho));
+}
+
+.dashboardProdutoItem h3 {
+  margin-bottom: 2px;
+  color: var(--vinho-escuro);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.dashboardProdutoItem p {
+  color: var(--texto-suave);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.dashboardProdutoDestaque {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: var(--rosa-forte);
+  background: rgba(255, 255, 255, 0.74);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.dashboardListaCarregando {
+  display: grid;
+  gap: 12px;
+}
+
+.dashboardListaCarregando span {
+  min-height: 70px;
+  border-radius: 18px;
+  background: linear-gradient(
+    90deg,
+    rgba(251, 213, 217, 0.55),
+    rgba(255, 255, 255, 0.92),
+    rgba(251, 213, 217, 0.55)
+  );
+  background-size: 220% 100%;
+  animation: dashboardSkeleton 1.4s infinite;
+}
+
+.dashboardVazio {
+  position: relative;
+  z-index: 2;
+  min-height: 230px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 9px;
+  text-align: center;
+  color: var(--vinho);
+}
+
+.dashboardVazio svg {
+  font-size: 38px;
+  color: var(--rosa-forte);
+}
+
+.dashboardVazio h3 {
+  color: var(--vinho-escuro);
+}
+
+.dashboardVazio p {
+  max-width: 330px;
+  color: var(--texto-suave);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@keyframes dashboardSkeleton {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* RESPONSIVO */
+
+.dashboardPagina,
+.dashboardSidebar,
+.dashboardConteudo,
+.dashboardMenu,
+.dashboardTopo,
+.dashboardResumo,
+.dashboardGrid {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1150px) {
+  .dashboardPagina {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .dashboardSidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    overflow: hidden;
+  }
+
+  .dashboardConteudo {
+    width: 100%;
+    max-width: 100vw;
+    margin-left: 0;
+    padding: 30px 22px;
+    overflow-x: hidden;
+  }
+
+  .dashboardLogoArea {
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  .dashboardMenu {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 9px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .dashboardMenu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dashboardMenuItem {
+    flex: 0 0 auto;
+    min-width: fit-content;
+    white-space: nowrap;
+  }
+
+  .dashboardSair {
+    width: 48px;
+    height: 48px;
+    min-height: 48px;
+    padding: 0;
+    margin-top: 0;
+    font-size: 0;
+    flex-shrink: 0;
+  }
+
+  .dashboardSair svg {
+    font-size: 19px;
+  }
+
+  .dashboardTopo {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dashboardTopoAcoes {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .dashboardBotaoPrimario,
+  .dashboardBotaoSecundario {
+    width: 100%;
+  }
+
+  .dashboardResumo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboardSidebar {
+    padding: 16px 14px;
+    gap: 14px;
+  }
+
+  .dashboardLogoSelo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .dashboardLogoArea {
+    gap: 10px;
+  }
+
+  .dashboardLogoArea strong {
+    font-size: 22px;
+  }
+
+  .dashboardLogoArea span {
+    font-size: 20px;
+  }
+
+  .dashboardMenuItem {
+    min-height: 43px;
+    padding: 11px 13px;
+    border-radius: 15px;
+    font-size: 12px;
+  }
+
+  .dashboardConteudo {
+    padding: 26px 18px;
+  }
+
+  .dashboardTopo h1 {
+    font-size: 38px;
+  }
+
+  .dashboardTopo h1 span {
+    font-size: 52px;
+  }
+
+  .dashboardTopo p {
+    font-size: 14px;
+  }
+
+  .dashboardResumo {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .dashboardResumoCard {
+    width: 100%;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  .dashboardAtalhosGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardPainel {
+    padding: 22px 18px;
+    border-radius: 26px;
+  }
+
+  .dashboardProdutoItem {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .dashboardProdutoDestaque {
+    grid-column: 2;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardSidebar {
+    padding: 14px 12px;
+  }
+
+  .dashboardLogoSelo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .dashboardLogoArea strong {
+    font-size: 20px;
+  }
+
+  .dashboardLogoArea span {
+    font-size: 18px;
+  }
+
+  .dashboardSair {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+  }
+
+  .dashboardMenu {
+    gap: 8px;
+  }
+
+  .dashboardMenuItem {
+    min-height: 40px;
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .dashboardMenuItem svg {
+    font-size: 16px;
+  }
+
+  .dashboardConteudo {
+    padding: 24px 14px;
+  }
+
+  .dashboardTopoAcoes {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboardTag {
+    font-size: 10px;
+  }
+
+  .dashboardTopo h1 {
+    font-size: 34px;
+  }
+
+  .dashboardTopo h1 span {
+    font-size: 48px;
+  }
+
+  .dashboardResumoCard {
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .dashboardResumoIcone {
+    width: 54px;
+    height: 54px;
+  }
+
+  .dashboardResumoCard strong {
+    font-size: 30px;
+  }
+
+  .dashboardSecaoTitulo {
+    flex-direction: column;
+  }
+}
