@@ -6,24 +6,21 @@ dotenv.config();
 const { Pool } = pg;
 
 const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  connectionString: process.env.DATABASE_URL,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? {
+          rejectUnauthorized: false
+        }
+      : false
 });
 
-export async function testarConexao() {
-  try {
-    const conexao = await pool.connect();
+pool.on("connect", () => {
+  console.log("Banco de dados conectado.");
+});
 
-    console.log("Banco de dados conectado com sucesso.");
-
-    conexao.release();
-  } catch (erro) {
-    console.error("Erro ao conectar com o banco de dados:");
-    console.error(erro.message);
-  }
-}
+pool.on("error", (erro) => {
+  console.error("Erro inesperado no banco de dados:", erro);
+});
 
 export default pool;
