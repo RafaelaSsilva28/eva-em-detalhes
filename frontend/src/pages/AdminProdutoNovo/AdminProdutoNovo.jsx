@@ -72,41 +72,55 @@ function AdminProdutoNovo() {
 
       const token = localStorage.getItem("tokenEvaEmDetalhes");
 
-      const [
-        respostaProdutos,
-        respostaProdutosInativos,
-        respostaCategorias
-      ] = await Promise.all([
-        api.get("/produtos", {
+      let produtosAtivos = [];
+      let produtosInativos = [];
+      let categoriasAtivas = [];
+
+      try {
+        const respostaProdutos = await api.get("/produtos", {
           headers: {
             Authorization: `Bearer ${token}`
           }
-        }),
+        });
 
-        api.get("/produtos/inativos", {
+        produtosAtivos = Array.isArray(respostaProdutos.data)
+          ? respostaProdutos.data
+          : respostaProdutos.data.produtos || [];
+      } catch (erro) {
+        console.error("Erro ao buscar produtos ativos:", erro);
+      }
+
+      try {
+        const respostaProdutosInativos = await api.get("/produtos/inativos", {
           headers: {
             Authorization: `Bearer ${token}`
           }
-        }),
+        });
 
-        api.get("/categorias", {
+        produtosInativos = Array.isArray(respostaProdutosInativos.data)
+          ? respostaProdutosInativos.data
+          : respostaProdutosInativos.data.produtos || [];
+      } catch (erro) {
+        console.warn("Erro ao buscar produtos inativos:", erro);
+      }
+
+      try {
+        const respostaCategorias = await api.get("/categorias", {
           headers: {
             Authorization: `Bearer ${token}`
           }
-        })
-      ]);
+        });
 
-      const listaProdutosAtivos = Array.isArray(respostaProdutos.data)
-        ? respostaProdutos.data
-        : respostaProdutos.data.produtos || [];
-
-      const listaProdutosInativos = Array.isArray(respostaProdutosInativos.data)
-        ? respostaProdutosInativos.data
-        : respostaProdutosInativos.data.produtos || [];
+        categoriasAtivas = Array.isArray(respostaCategorias.data)
+          ? respostaCategorias.data
+          : respostaCategorias.data.categorias || [];
+      } catch (erro) {
+        console.error("Erro ao buscar categorias:", erro);
+      }
 
       const listaProdutos = [
-        ...listaProdutosAtivos,
-        ...listaProdutosInativos
+        ...produtosAtivos,
+        ...produtosInativos
       ];
 
       const produtosSemDuplicar = listaProdutos.filter(
@@ -115,12 +129,8 @@ function AdminProdutoNovo() {
           array.findIndex((item) => item.id_produto === produto.id_produto)
       );
 
-      const listaCategorias = Array.isArray(respostaCategorias.data)
-        ? respostaCategorias.data
-        : respostaCategorias.data.categorias || [];
-
       setProdutos(produtosSemDuplicar);
-      setCategorias(listaCategorias);
+      setCategorias(categoriasAtivas);
     } catch (erro) {
       console.error("Erro ao carregar dados:", erro);
 
@@ -150,7 +160,13 @@ function AdminProdutoNovo() {
       return caminho;
     }
 
-    return `${API_URL}${caminho}`;
+    const apiUrlSemBarraFinal = API_URL.replace(/\/$/, "");
+
+    const caminhoComBarraInicial = caminho.startsWith("/")
+      ? caminho
+      : `/${caminho}`;
+
+    return `${apiUrlSemBarraFinal}${caminhoComBarraInicial}`;
   }
 
   function formatarPreco(valor) {
